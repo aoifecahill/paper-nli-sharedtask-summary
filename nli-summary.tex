@@ -35,56 +35,56 @@
 \newcite{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR}
  / Motivation for NLI paper (I figure we can take this from the CoNLL proposal I wrote up last year)
 
-One quickly growing subfield in NLP is the task of identifying the native 
-language (L1) of a writer based solely on a sample of their writing. The task 
-is framed as a classification problem where the set of L1s is known a priori. 
-Most work has focused on identifying the native language of writers 
-learning English as a second language. To date this topic has motivated 
+One quickly growing subfield in NLP is the task of identifying the native
+language (L1) of a writer based solely on a sample of their writing. The task
+is framed as a classification problem where the set of L1s is known a priori.
+Most work has focused on identifying the native language of writers
+learning English as a second language. To date this topic has motivated
 several ACL and EMNLP papers, as well as a master's thesis \cite{kochmar2011identification}.
 
-Native Language Identification (NLI) can be useful for a number of 
-applications. NLI can be used in educational settings to provide more 
-targeted feedback to language learners about their errors. It is 
-well known that speakers of different languages make different kinds of 
-errors when learning a language \cite{SwanSmith01}. A writing tutor system 
-which can detect the native language of the learner will be able to tailor 
-the feedback about the error and contrast it with common 
-properties of the learner's language. In addition, native language is 
-often used as a feature that goes into authorship profiling 
-\cite{estival2007author}, which is frequently used in forensic linguistics. 
+Native Language Identification (NLI) can be useful for a number of
+applications. NLI can be used in educational settings to provide more
+targeted feedback to language learners about their errors. It is
+well known that speakers of different languages make different kinds of
+errors when learning a language \cite{SwanSmith01}. A writing tutor system
+which can detect the native language of the learner will be able to tailor
+the feedback about the error and contrast it with common
+properties of the learner's language. In addition, native language is
+often used as a feature that goes into authorship profiling
+\cite{estival2007author}, which is frequently used in forensic linguistics.
 
-Despite the growing interest in this field, development has been encumbered 
+Despite the growing interest in this field, development has been encumbered
 by two issues. First is the issue of data. Evaluating an NLI system requires
- a corpus containing texts in a language other than the native language of 
-the writer. Because of a scarcity of such corpora, most work has used 
-the International Corpus of Learner English (ICLEv2) \cite{Granger2009} 
-for training and evaluation since it contains several hundred essays 
-written by college-level English language learners. However, 
-this corpus is quite small for training and testing statistical systems 
-which makes it difficult to tell whether the systems that are developed can 
-scale well to larger data sets or to different domains. 
+ a corpus containing texts in a language other than the native language of
+the writer. Because of a scarcity of such corpora, most work has used
+the International Corpus of Learner English (ICLEv2) \cite{Granger2009}
+for training and evaluation since it contains several hundred essays
+written by college-level English language learners. However,
+this corpus is quite small for training and testing statistical systems
+which makes it difficult to tell whether the systems that are developed can
+scale well to larger data sets or to different domains.
 
-The usability of the corpus is further compromised by idiosyncrasies in the 
-data such as topic bias (as shown by \cite{brooke2011native}) and the 
-occurrence of characters which only appear in essays 
-written by speakers of certain languages. As a result, it is hard to draw 
-conclusions about which features actually perform best. The second issue is 
-that there has been little consistency in the field in the use of 
-cross-validation, the number of L1s, and which L1s are used. As a result, 
-comparing one approach to another has been extremely difficult. 
+The usability of the corpus is further compromised by idiosyncrasies in the
+data such as topic bias (as shown by \cite{brooke2011native}) and the
+occurrence of characters which only appear in essays
+written by speakers of certain languages. As a result, it is hard to draw
+conclusions about which features actually perform best. The second issue is
+that there has been little consistency in the field in the use of
+cross-validation, the number of L1s, and which L1s are used. As a result,
+comparing one approach to another has been extremely difficult.
 
-The goal of this proposal is to create the first shared task in Native 
-Language Identification (NLI) to better unify this community and help the 
-field progress. The Shared Task proposal addresses the two deficiencies above 
-by first using a new corpus (TOEFL11, discussed below) which is larger than 
-the ICLE and designed specifically for the task of NLI and second, by 
-providing a common set of L1s and evaluation standards that everyone will use 
-for this competition, thus facilitating direct comparison of approaches. This 
-task is very appropriate for CoNLL since most previous approaches 
-to NLI have used different machine learning and statistical techniques 
-ranging from classifiers using lexical and n-gram features 
-\cite{koppel2005determining}, to approaches using Tree Substitution Grammars 
-\cite{swanson-charniak:2012:ACL2012short}, to those which make use of 
+The goal of this proposal is to create the first shared task in Native
+Language Identification (NLI) to better unify this community and help the
+field progress. The Shared Task proposal addresses the two deficiencies above
+by first using a new corpus (TOEFL11, discussed below) which is larger than
+the ICLE and designed specifically for the task of NLI and second, by
+providing a common set of L1s and evaluation standards that everyone will use
+for this competition, thus facilitating direct comparison of approaches. This
+task is very appropriate for CoNLL since most previous approaches
+to NLI have used different machine learning and statistical techniques
+ranging from classifiers using lexical and n-gram features
+\cite{koppel2005determining}, to approaches using Tree Substitution Grammars
+\cite{swanson-charniak:2012:ACL2012short}, to those which make use of
 topic models \cite{Sze-MengJojoWongMarkDrasMarkJohnson:2011:ALTA2011}.
 
 
@@ -122,7 +122,7 @@ training and test sets, as there are several languages for which there are no
 essays for a given prompt in the development set, whereas there are none in the
 training set, and only one, Italian, for the test set.
 
-\begin{table}[htb]
+\begin{table*}[htb]
     \label{tab:prompts-train}
     \begin{center}
         \begin{tabular}{lrrrrrrrr}
@@ -143,9 +143,9 @@ training set, and only one, Italian, for the test set.
         \end{tabular}
     \end{center}
     \caption{Number of essays per language per prompt in training set}
-\end{table}
+\end{table*}
 
-\begin{table}[htb]
+\begin{table*}[htb]
     \label{tab:prompts-dev}
     \begin{center}
         \begin{tabular}{lrrrrrrrr}
@@ -166,9 +166,9 @@ training set, and only one, Italian, for the test set.
         \end{tabular}
     \end{center}
     \caption{Number of essays per language per prompt in development set}
-\end{table}
+\end{table*}
 
-\begin{table}[htb]
+\begin{table*}[htb]
     \label{tab:prompts-test}
     \begin{center}
         \begin{tabular}{lrrrrrrrr}
@@ -189,7 +189,7 @@ training set, and only one, Italian, for the test set.
         \end{tabular}
     \end{center}
     \caption{Number of essays per language per prompt in test set}
-\end{table}
+\end{table*}
 
 
 \section{Description of 3 tasks}
@@ -197,12 +197,12 @@ training set, and only one, Italian, for the test set.
 The shared task consisted of three sub-tasks:
 
 \begin{itemize}
-\item {\bf Closed-Training}:  The first and main task was be the 11 way 
-classification task using only the TOEFL11 for training, and then using 
-TOEFL-TEST for the blind evaluation. 
-\item {\bf Open-Training}: The second task allowed the use of any amount or 
-type of training data (as is done in \cite{brooke2011native}) excluding the TOEFL11, but still evaluate on 
-TOEFL-TEST. 
+\item {\bf Closed-Training}:  The first and main task was be the 11 way
+classification task using only the TOEFL11 for training, and then using
+TOEFL-TEST for the blind evaluation.
+\item {\bf Open-Training}: The second task allowed the use of any amount or
+type of training data (as is done in \cite{brooke2011native}) excluding the TOEFL11, but still evaluate on
+TOEFL-TEST.
 \item {\bf Proficiency Level}: The third task  allowed the use of TOEFL11 combined with any other additional data.
 \end{itemize}
 
@@ -366,7 +366,7 @@ BUC & 82.6 \\ \hline
 TUE & 82.4 \\ \hline
 CAR & 82.2 \\ \hline
 NAI & 82.09 \\ \hline
-\cite{tetreault-EtAl:2012:PAPERS} &  & 80.9 \\ hline
+\cite{tetreault-EtAl:2012:PAPERS}  & 80.9 \\ hline
 HAU & 79.9 \\ \hline
 LIM & 75.89  \\ \hline
 CUN & 74.2\\ \hline
