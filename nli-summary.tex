@@ -200,9 +200,11 @@ task to task.
 \item {\bf Closed-Training}:  The first and main task was the 11 way
 classification task using only the TOEFL11-TRAIN and TRAIN-DEV for training.
 \item {\bf Open-Training-1}: The second task allowed the use of any amount or
-type of training data (as is done in \cite{brooke2011native}) {\em excluding} any data from the TOEFL11, but still evaluated on
-TOEFL-TEST.
-\item {\bf Open-Training-2}: The third task allowed the use of TOEFL11-TRAIN and TOEFL11-DEV combined with any other additional data. This most closely reflects a real-world scenario.
+type of training data (as is done by \newcite{brooke2011native})
+\emph{excluding} any data from the TOEFL11, but still evaluated on TOEFL-TEST.
+\item {\bf Open-Training-2}: The third task allowed the use of TOEFL11-TRAIN and
+TOEFL11-DEV combined with any other additional data. This most closely reflects
+a real-world scenario.
 \end{itemize}
 
 Additionally, each team could submit up to 5 different
@@ -215,9 +217,9 @@ The train and dev data contained an index file with the L1 for each
 essay in those sets.  The previously unseen and unlabeled test data was
 released on March 11 and teams had 8 days to submit their system predictions.
 The predictions for each system
-were encoded in a csv file, where each line contained the file ID of a
+were encoded in a CSV file, where each line contained the file ID of a
 file in TOEFL-TEST and the corresponding L1 prediction made by the
-system.  Each csv file was emailed to the NLI organizers and then
+system.  Each CSV file was emailed to the NLI organizers and then
 evaluated against the gold standard.
 % Since this was a ``blind'' competition, the L1s for each of the essays in the test set were not released until after the submission deadline.
 
@@ -347,7 +349,7 @@ TOR& 4  & 0.816 & 0.770 & 0.861 & 0.840 & 0.900 & 0.704 & 0.860 & 0.834 & 0.800 
 HYD & 1  & 0.741 & 0.677 & 0.782 & 0.755 & 0.829 & 0.693 & 0.784 & 0.777 & 0.728 & 0.613 & 0.766 & 0.744\\\hline
 NAI & 3  & 0.703 & 0.676 & 0.695 & 0.708 & 0.846 & 0.618 & 0.830 & 0.677 & 0.610 & 0.663 & 0.726 & 0.688\\\hline
 \end{tabular}
-\caption{Results for open-2 task\label{tab:results:open1}}
+\caption{Results for open-2 task\label{tab:results:open2}}
 \end{small}
 \end{table*}
 
@@ -429,7 +431,8 @@ MIC & 63 \\ \hline
 MQ  & ?? \\ \hline
 
 \end{tabular}
-\caption{Results for 10-fold cross-validation on TOEFL-Train $+$ TOEFL-Dev \label{tab:10fold}}
+\caption{Results for 10-fold cross-validation on TOEFL-Train $+$ TOEFL-Dev
+\label{tab:10fold}}
 \end{table}
 
 \section{Future Work} -are we doing this again next year?  what would we do differently?
