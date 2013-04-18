@@ -9,6 +9,7 @@
 \usepackage{multirow}
 \usepackage{amsmath}
 \usepackage{linguex}
+\usepackage{subfig}
 
 \setlength\titlebox{6.5cm}    % Expanding the titlebox
 
@@ -125,9 +126,11 @@ training set, and only one, Italian, for the test set.
 It should be noted that in the first instantiation of the corpus,
 presented in \cite{tetreault-EtAl:2012:PAPERS},
 
-\begin{table*}[htb]
-    \label{tab:prompts-train}
-    \begin{center}
+\begin{table*}[ht]
+\begin{small}
+\begin{center}
+
+\subfloat[Training Set]{\label{tab:prompts-train}
         \begin{tabular}{lrrrrrrrr}
             \hline
             \textbf{Lang.} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{P8}\\ \hline
@@ -144,13 +147,9 @@ presented in \cite{tetreault-EtAl:2012:PAPERS},
             Tur.    &  132 & 132 & 72  & 132 & 132 & 37  & 132 & 131 \\ \hline \hline
             Total      &  1369 & 1299 & 1156 & 1210 & 1368 & 775 & 1369 & 1354 \\ \hline
         \end{tabular}
-    \end{center}
-    \caption{Number of essays per language per prompt in training set}
-\end{table*}
-
-\begin{table*}[htb]
-    \label{tab:prompts-dev}
-    \begin{center}
+}
+~\\~\\
+\subfloat[Dev Set]{\label{tab:prompts-dev}
         \begin{tabular}{lrrrrrrrr}
             \hline
             \textbf{Lang.} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{P8}\\ \hline
@@ -167,13 +166,9 @@ presented in \cite{tetreault-EtAl:2012:PAPERS},
             Tur.    &   22 & 4  & 0  & 22 & 7  & 0  & 22 & 23  \\ \hline \hline
             Total      &   152& 120& 93 & 141& 168& 71 & 181& 174 \\ \hline
         \end{tabular}
-    \end{center}
-    \caption{Number of essays per language per prompt in development set}
-\end{table*}
-
-\begin{table*}[htb]
-    \label{tab:prompts-test}
-    \begin{center}
+}
+~\\~\\
+\subfloat[Test Set]{\label{tab:prompts-test}
         \begin{tabular}{lrrrrrrrr}
             \hline
             \textbf{Lang.} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{P8}\\ \hline
@@ -190,8 +185,10 @@ presented in \cite{tetreault-EtAl:2012:PAPERS},
             Tur.    &   15 & 9  & 18 & 16 & 8  & 6  & 13 & 15 \\ \hline \hline
             Total      &   135&143 & 147& 158& 112& 114& 136& 155 \\ \hline
         \end{tabular}
-    \end{center}
-    \caption{Number of essays per language per prompt in test set}
+}
+\end{center}
+\end{small}
+\caption{Number of essays per language per prompt in each data set}
 \end{table*}
 
 
