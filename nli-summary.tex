@@ -38,7 +38,7 @@ language (L1) of a writer based solely on a sample of their writing. The task
 is framed as a classification problem where the set of L1s is known a priori.
 Most work has focused on identifying the native language of writers
 learning English as a second language. To date this topic has motivated
-several ACL and EMNLP papers, as well as a master's thesis \cite{kochmar2011identification}.
+several papers and research projects. 
 
 Native Language Identification (NLI) can be useful for a number of
 applications. NLI can be used in educational settings to provide more
@@ -62,8 +62,9 @@ this corpus is quite small for training and testing statistical systems
 which makes it difficult to tell whether the systems that are developed can
 scale well to larger data sets or to different domains.
 
-The usability of the corpus is further compromised by idiosyncrasies in the
-data such as topic bias (as shown by \cite{brooke2011native}) and the
+Since the ICLE corpus was not designed with the task of NLI in mind, the usability 
+of the corpus for this task is further compromised by idiosyncrasies in the
+data such as topic bias (as shown by \newcite{brooke2011native}) and the
 occurrence of characters which only appear in essays
 written by speakers of certain languages. As a result, it is hard to draw
 conclusions about which features actually perform best. The second issue is
@@ -77,14 +78,7 @@ field progress. The Shared Task proposal addresses the two deficiencies above
 by first using a new corpus (TOEFL11, discussed below) which is larger than
 the ICLE and designed specifically for the task of NLI and second, by
 providing a common set of L1s and evaluation standards that everyone will use
-for this competition, thus facilitating direct comparison of approaches. This
-task is very appropriate for CoNLL since most previous approaches
-to NLI have used different machine learning and statistical techniques
-ranging from classifiers using lexical and n-gram features
-\cite{koppel2005determining}, to approaches using Tree Substitution Grammars
-\cite{swanson-charniak:2012:ACL2012short}, to those which make use of
-topic models \cite{Sze-MengJojoWongMarkDrasMarkJohnson:2011:ALTA2011}.
-
+for this competition, thus facilitating direct comparison of approaches. 
 
 \section{Related Work}
 
@@ -124,7 +118,7 @@ essays for a given prompt in the development set, whereas there are none in the
 training set, and only one, Italian, for the test set.
 
 It should be noted that in the first instantiation of the corpus,
-presented in \cite{tetreault-EtAl:2012:PAPERS},
+presented in \cite{tetreault-EtAl:2012:PAPERS}, JOEL FILL IN WHAT YOU WANTED TO SAY HERE
 
 \begin{table*}[ht]
 \begin{small}
@@ -202,9 +196,9 @@ task to task.
 \item {\bf Closed-Training}:  The first and main task was the 11 way
 classification task using only the TOEFL11-TRAIN and TRAIN-DEV for training.
 \item {\bf Open-Training-1}: The second task allowed the use of any amount or
-type of training data (as is done in \cite{brooke2011native}) excluding any data from the TOEFL11, but still evaluated on
+type of training data (as is done in \cite{brooke2011native}) {\em excluding} any data from the TOEFL11, but still evaluated on
 TOEFL-TEST.
-\item {\bf Open-Training-2}: The third task allowed the use of TOEFL11-TRAIN and TOEFL11-DEV combined with any other additional data.
+\item {\bf Open-Training-2}: The third task allowed the use of TOEFL11-TRAIN and TOEFL11-DEV combined with any other additional data. This most closely reflects a real-world scenario. 
 \end{itemize}
 
 Additionally, each team could submit up to 5 different
@@ -214,20 +208,19 @@ variations of their core system.
 The training data was released on January 14, with the development
 data and evaluation script released nearly a month later on February 12.
 The train and dev data contained an index file with the L1 for each
-essay in those sets.  The test data was released on March 11 and teams had
-8 days (March 19) to submit their system predictions.  The predictions for
-each system
-are encoded in a csv file, where each line contains the file ID of a
+essay in those sets.  The previously unseen and unlabeled test data was 
+released on March 11 and teams had 8 days to submit their system predictions. 
+The predictions for each system
+were encoded in a csv file, where each line contained the file ID of a
 file in TOEFL-TEST and the corresponding L1 prediction made by the
 system.  Each csv file was emailed to the NLI organizers and then
-evaluated against the gold standard.  Since this was a ``blind''
-competition, the L1s for each of the essays in the test set were not
-released until after the submission deadline.
+evaluated against the gold standard.  
+% Since this was a ``blind'' competition, the L1s for each of the essays in the test set were not released until after the submission deadline.
 
 
 \section{Teams}
 
-We had 29 teams compete in the shared task competition, with 24 teams
+In total, 29 teams competed in the shared task competition, with 24 teams
 electing to write papers describing their system(s).  The list
 of participating times, along with their team abbreviations, can be
 found in Table~\ref{tab:teams}.
@@ -392,16 +385,16 @@ Next table - Machine learning algorithms
 \section{Cross Validation Results}
 Upon completion of the competition, we asked the participants to
 perform 10-fold cross validation on a data set consisting of the union
-of TOEFL11-TRAIN an TOEFL11-DEV.  This was the same set of data
+of TOEFL11-TRAIN and TOEFL11-DEV.  This was the same set of data
 used in the first work to use any of the TOEFL11 data
 \cite{tetreault-EtAl:2012:PAPERS}, and would allow another point of
 comparison for future NLI work.  For direct comparison with
-\cite{tetreault-EtAl:2012:PAPERS}, we provided the exact folds used in
+\newcite{tetreault-EtAl:2012:PAPERS}, we provided the exact folds used in
 that work.
 
-The results of the 10-fold cross validation is shown in Table~\ref{tab:10fold}.
+The results of the 10-fold cross validation are shown in Table~\ref{tab:10fold}.
 Two teams had systems that performed at 84.5 or better, which is just
-slightly higher than the best team performance on the TOEFL11 data.  In
+slightly higher than the best team performance on the TOEFL11-TEST data.  In
 general, systems that performed well in the main competition also
 performed similarly (in terms of performance and ranking) in the
 cross validation experiment.
