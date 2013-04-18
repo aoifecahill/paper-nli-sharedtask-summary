@@ -10,6 +10,7 @@
 \usepackage{amsmath}
 \usepackage{linguex}
 \usepackage{subfig}
+\usepackage[table]{xcolor}    % also loads colortbl
 
 \setlength\titlebox{6.5cm}    % Expanding the titlebox
 
@@ -35,10 +36,10 @@
 \label{sec-intro}
 One quickly growing subfield in NLP is the task of identifying the native
 language (L1) of a writer based solely on a sample of their writing. The task
-is framed as a classification problem where the set of L1s is known a priori.
+is framed as a classification problem where the set of L1s is known \emph{a priori}.
 Most work has focused on identifying the native language of writers
 learning English as a second language. To date this topic has motivated
-several papers and research projects. 
+several papers and research projects.
 
 Native Language Identification (NLI) can be useful for a number of
 applications. NLI can be used in educational settings to provide more
@@ -62,15 +63,15 @@ this corpus is quite small for training and testing statistical systems
 which makes it difficult to tell whether the systems that are developed can
 scale well to larger data sets or to different domains.
 
-Since the ICLE corpus was not designed with the task of NLI in mind, the usability 
-of the corpus for this task is further compromised by idiosyncrasies in the
-data such as topic bias (as shown by \newcite{brooke2011native}) and the
-occurrence of characters which only appear in essays
-written by speakers of certain languages. As a result, it is hard to draw
-conclusions about which features actually perform best. The second issue is
-that there has been little consistency in the field in the use of
-cross-validation, the number of L1s, and which L1s are used. As a result,
-comparing one approach to another has been extremely difficult.
+Since the ICLE corpus was not designed with the task of NLI in mind, the
+usability of the corpus for this task is further compromised by idiosyncrasies
+in the data such as topic bias (as shown by \newcite{brooke2011native}) and the
+occurrence of characters which only appear in essays written by speakers of
+certain languages \cite{tetreault-EtAl:2012:PAPERS}. As a result, it is hard to
+draw conclusions about which features actually perform best. The second issue is
+that there has been little consistency in the field in the use of cross-
+validation, the number of L1s, and which L1s are used. As a result, comparing
+one approach to another has been extremely difficult.
 
 The goal of this proposal is to create the first shared task in Native
 Language Identification (NLI) to better unify this community and help the
@@ -78,7 +79,7 @@ field progress. The Shared Task proposal addresses the two deficiencies above
 by first using a new corpus (TOEFL11, discussed below) which is larger than
 the ICLE and designed specifically for the task of NLI and second, by
 providing a common set of L1s and evaluation standards that everyone will use
-for this competition, thus facilitating direct comparison of approaches. 
+for this competition, thus facilitating direct comparison of approaches.
 
 \section{Related Work}
 
@@ -198,7 +199,7 @@ classification task using only the TOEFL11-TRAIN and TRAIN-DEV for training.
 \item {\bf Open-Training-1}: The second task allowed the use of any amount or
 type of training data (as is done in \cite{brooke2011native}) {\em excluding} any data from the TOEFL11, but still evaluated on
 TOEFL-TEST.
-\item {\bf Open-Training-2}: The third task allowed the use of TOEFL11-TRAIN and TOEFL11-DEV combined with any other additional data. This most closely reflects a real-world scenario. 
+\item {\bf Open-Training-2}: The third task allowed the use of TOEFL11-TRAIN and TOEFL11-DEV combined with any other additional data. This most closely reflects a real-world scenario.
 \end{itemize}
 
 Additionally, each team could submit up to 5 different
@@ -208,13 +209,13 @@ variations of their core system.
 The training data was released on January 14, with the development
 data and evaluation script released nearly a month later on February 12.
 The train and dev data contained an index file with the L1 for each
-essay in those sets.  The previously unseen and unlabeled test data was 
-released on March 11 and teams had 8 days to submit their system predictions. 
+essay in those sets.  The previously unseen and unlabeled test data was
+released on March 11 and teams had 8 days to submit their system predictions.
 The predictions for each system
 were encoded in a csv file, where each line contained the file ID of a
 file in TOEFL-TEST and the corresponding L1 prediction made by the
 system.  Each csv file was emailed to the NLI organizers and then
-evaluated against the gold standard.  
+evaluated against the gold standard.
 % Since this was a ``blind'' competition, the L1s for each of the essays in the test set were not released until after the submission deadline.
 
 
@@ -269,9 +270,10 @@ VTEX &  VTX \\ \hline
 
 \begin{table*}
 \begin{small}
+\rowcolors{2}{gray!25}{white}
 \begin{tabular}{|p{1cm}|c|p{1cm}|r|r|r|r|r|r|r|r|r|r|r|r|}
 \hline
-
+\rowcolor{gray!50}
 \multicolumn{3}{|c|}{} & \multicolumn{11}{|c|}{\bf L1 F-Score}\\\hline
 {\bf Team Name} & {\bf Run} & {\bf Overall Acc.} & {\bf ARA} & {\bf CHI} & {\bf FRE} & {\bf GER} & {\bf HIN} & {\bf ITA} & {\bf JPN} & {\bf KOR} & {\bf SPA} & {\bf TEL} & {\bf TUR}\\\hline
   JAR & 2  & 0.836 & 0.785 & 0.856 & 0.860 & 0.893 & 0.775 & 0.905 & 0.854 & 0.813 & 0.798 & 0.802 & 0.854\\\hline
@@ -312,9 +314,10 @@ EUR   & 1  & 0.386 & 0.500 & 0.390 & 0.277 & 0.379 & 0.487 & 0.522 & 0.441 & 0.3
 
 \begin{table*}
 \begin{small}
+\rowcolors{2}{gray!25}{white}
 \begin{tabular}{|p{1cm}|c|p{1cm}|r|r|r|r|r|r|r|r|r|r|r|r|}
 \hline
-
+\rowcolor{gray!50}
 \multicolumn{3}{|c|}{} & \multicolumn{11}{|c|}{\bf L1 F-Score}\\\hline
 {\bf Team Name} & {\bf Run} & {\bf Overall Acc.} & {\bf ARA} & {\bf CHI} & {\bf FRE} & {\bf GER} & {\bf HIN} & {\bf ITA} & {\bf JPN} & {\bf KOR} & {\bf SPA} & {\bf TEL} & {\bf TUR}\\\hline
 TOR & 5  & 0.565 & 0.410 & 0.776 & 0.692 & 0.754 & 0.277 & 0.680 & 0.660 & 0.650 & 0.653 & 0.190 & 0.468\\\hline
@@ -328,9 +331,10 @@ NAI & 2  & 0.356 & 0.329 & 0.450 & 0.331 & 0.423 & 0.066 & 0.511 & 0.426 & 0.481
 
 \begin{table*}
 \begin{small}
+\rowcolors{2}{gray!25}{white}
 \begin{tabular}{|p{1cm}|c|p{1cm}|r|r|r|r|r|r|r|r|r|r|r|r|}
 \hline
-
+\rowcolor{gray!50}
 \multicolumn{3}{|c|}{} & \multicolumn{11}{|c|}{\bf L1 F-Score}\\\hline
 {\bf Team Name} & {\bf Run} & {\bf Overall Acc.} & {\bf ARA} & {\bf CHI} & {\bf FRE} & {\bf GER} & {\bf HIN} & {\bf ITA} & {\bf JPN} & {\bf KOR} & {\bf SPA} & {\bf TEL} & {\bf TUR}\\\hline
 TUE & 1  & 0.835 & 0.798 & 0.876 & 0.844 & 0.883 & 0.777 & 0.883 & 0.836 & 0.794 & 0.846 & 0.826 & 0.818\\\hline
@@ -355,7 +359,7 @@ Word N-Grams       & 1      & CN, UNT, JAR, TOR, KYL, ITA, CUN, BOB, OSL, TUE, U
 		   & 2      & CN, UNT, JAR, TOR, KYL, ITA, CUN, BOB, OSL, TUE, COR, UAB, CYW, NAI, NRC, HAU, MIC, CAR \\ \hline
                    & 3      & UNT, MQ, JAR, KYL, CUN, COR, HAU, MIC, CAR  \\ \hline
                    & 4      & JAR, KYL, CAR   \\ \hline
-		   & 5      & CAR \\ \hline	
+		   & 5      & CAR \\ \hline
 POS N-grams        & 1      & CN, UNT, JAR, TOR, ITA, LIM, CUN, BOB, TUE, HAI, CAR  \\ \hline
 		   & 2      & CN, UNT, JAR, TOR, ITA, LIM, CUN, BOB, TUE, COR, HAI, NAI, NRC, MIC, CAR   \\ \hline
                    & 3      & CN, UNT, JAR, TOR, LIM, CUN, TUE, COR, HAI, NAI, NRC, CAR     \\ \hline
