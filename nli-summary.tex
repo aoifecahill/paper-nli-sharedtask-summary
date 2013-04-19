@@ -93,7 +93,7 @@ comparing one approach to another has been extremely difficult.
 The first shared task in Native Language Identification (NLI) is intended to
 better unify this community and help the field progress. The Shared Task
 addresses the two deficiencies above by first using a new corpus (\textsc{toef11},
-discussed below) which is larger than the ICLE and designed specifically for the
+discussed in Section~\ref{sec-data}) which is larger than the ICLE and designed specifically for the
 task of NLI and second, by providing a common set of L1s and evaluation
 standards that everyone will use for this competition, thus facilitating direct
 comparison of approaches. In this report we describe the methods most
@@ -101,13 +101,19 @@ participants used, the data they evaluated their systems on, the three sub-tasks
 involved, the results achieved by the different teams, and some suggestions
 ideas about what we can do for the next iteration of the NLI shared task.
 
-\section{Related Work}
+In the following section, we provide a summary of the prior work in
+Native Language Identification.  Next, in Section~\ref{sec-data} we describe 
+the \textsc{toefl11} corpus used for training, development and testing in 
+this shared task. In Sections~\ref{sec-teams}....
 
-(briefly mention the methods that people have used)
+\section{Related Work}
+\label{sec-relatedwork}
+
 
 
 
 \section{Data}
+\label{sec-data}
 The dataset for the task was the new \textsc{toefl11} corpus
 \cite{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR}. \textsc{toefl11}
 consists of essays written during a high-stakes college-entrance test, the Test
@@ -248,7 +254,7 @@ evaluated against the gold standard.
 
 
 \section{Teams}
-
+\label{sec-teams}
 In total, 29 teams competed in the shared task competition, with 24 teams
 electing to write papers describing their system(s).  The list
 of participating times, along with their team abbreviations, can be
@@ -296,7 +302,7 @@ VTEX &  VTX \\ \hline
 \end{table*}
 
 \section{Shared Task Results}
-
+\label{sec-results}
 This section summarizes the results of the shared task.  For each subtask,
 we have tables listing the top submission of each team, its performance in
 accuracy, and its performance by L1.\footnote{For those interested seeing
@@ -399,66 +405,13 @@ NAI & 3  & 0.703 & 0.676 & 0.695 & 0.708 & 0.846 & 0.618 & 0.830 & 0.677 & 0.610
 \end{table*}
 
 
-\subsection{Commonalities}
 
-In order to
-
-\begin{table*}[htbp]
-\begin{small}
-\begin{tabular}{|l|p{9.5cm}|}
-\hline
-{\bf Machine Learning} & {\bf Teams} \\  \hline
-SVM                    & CN, UNT, MQ, JAR, TOR, ITA, CUN, TUE, COR, NRC, HAU, MIC, CAR  \\ \hline
-MaxEnt / logistic regression                 & LIM, HAI, CAR  \\ \hline
-Ensemble               & MQ, ITA, NRC, CAR           \\ \hline
-Discriminant Function Analysis & KYL \\ \hline
-String Kernels / LRD   & BUC          \\ \hline
-PPM                    & BOB \\ \hline
-k-NN                   & VTX \\ \hline
-\end{tabular}
-\end{small}
-\caption{Machine Learning algorithms used in Shared Task\label{tab:common-features}}
-\end{table*}
-
-
-\begin{table*}[htbp]
-\begin{small}
-\begin{tabular}{|l|l|p{9.5cm}|}
-\hline
-{\bf Feature} & {\bf Type} & {\bf Teams} \\  \hline
-Word N-Grams       & 1      & CN, UNT, JAR, TOR, KYL, ITA, CUN, BOB, OSL, TUE, UAB, CYW, NAI, NRC, MIC, CAR   \\ \hline
-		   & 2      & CN, UNT, JAR, TOR, KYL, ITA, CUN, BOB, OSL, TUE, COR, UAB, CYW, NAI, NRC, HAU, MIC, CAR \\ \hline
-                   & 3      & UNT, MQ, JAR, KYL, CUN, COR, HAU, MIC, CAR  \\ \hline
-                   & 4      & JAR, KYL, CAR   \\ \hline
-		   & 5      & CAR \\ \hline
-POS N-grams        & 1      & CN, UNT, JAR, TOR, ITA, LIM, CUN, BOB, TUE, HAI, CAR  \\ \hline
-		   & 2      & CN, UNT, JAR, TOR, ITA, LIM, CUN, BOB, TUE, COR, HAI, NAI, NRC, MIC, CAR   \\ \hline
-                   & 3      & CN, UNT, JAR, TOR, LIM, CUN, TUE, COR, HAI, NAI, NRC, CAR     \\ \hline
-                   & 4      & CN, JAR, TUE, HAI, NRC, CAR    \\ \hline
-                   & 5      & TUE, CAR \\ \hline
-Character N-Grams  & 1      & CN, UNT, MQ, JAR, TOR, LIM, BOB, OSL, HAI, CAR  \\ \hline
-                   & 2      & CN, UNT, MQ, JAR, TOR, ITA, LIM, BOB, OSL, COR, HAI, NAI, HAU, MIC, CAR  \\ \hline
-                   & 3      & CN, UNT, MQ, JAR, TOR, LIM, BOB, OSL, VTX, COR, HAI, NAI, NRC, HAU, MIC, CAR \\ \hline
-                   & 4      & CN, JAR, LIM, BOB, OSL, HAI, HAU, MIC, CAR \\ \hline
-                   & 5      & CN, JAR, BOB, OSL, HAU, CAR  \\ \hline
-                   & 6      & CN, JAR, OSL,   \\ \hline
-	           & 7      & JAR, OSL \\ \hline
-                   & 8-9    & JAR \\ \hline
-Function N-Grams   &        & MQ, UAB  \\ \hline
-Syntactic Features & Dependencies        & MQ, TOR, ITA, TUE, NAI, NRC \\ \hline
-                   & TSG                 & MQ, TOR, NAI,  \\ \hline
-                   & CF Productions      & TOR, \\ \hline
-		   & Adaptor Grammars  & MQ  \\ \hline
-Spelling Features  &        &   LIM,CN  \\ \hline
-\end{tabular}
-\end{small}
-\caption{Common Features used in Shared Task\label{tab:common-features}}
-\end{table*}
 
 
 
 
 \section{Cross Validation Results}
+\
 Upon completion of the competition, we asked the participants to
 perform 10-fold cross validation on a data set consisting of the union
 of \textsc{toefl11-train} and \textsc{toefl11-dev}.  This was the same set of data
@@ -505,15 +458,105 @@ MIC & 63 \\ \hline
 \label{tab:10fold}}
 \end{table}
 
-\section{Future Work} -are we doing this again next year?  what would we do differently?
+\subsection{Commonalities}
+\label{subsec-commonalities}
+In order to
 
-Need some sort of wrapup.  consider this a success?
+\begin{table*}[htbp]
+\begin{small}
+\begin{tabular}{|l|p{9.5cm}|}
+\hline
+{\bf Machine Learning} & {\bf Teams} \\  \hline
+SVM                    & CN, UNT, MQ, JAR, TOR, ITA, CUN, TUE, COR, NRC, HAU, MIC, CAR  \\ \hline
+MaxEnt / logistic regression                 & LIM, HAI, CAR  \\ \hline
+Ensemble               & MQ, ITA, NRC, CAR           \\ \hline
+Discriminant Function Analysis & KYL \\ \hline
+String Kernels / LRD   & BUC          \\ \hline
+PPM                    & BOB \\ \hline
+k-NN                   & VTX \\ \hline
+\end{tabular}
+\end{small}
+\caption{Machine Learning algorithms used in Shared Task\label{tab:common-machine-learning}}
+\end{table*}
+
+
+\begin{table*}[htbp]
+\begin{small}
+\begin{tabular}{|l|l|p{9.5cm}|}
+\hline
+{\bf Feature} & {\bf Type} & {\bf Teams} \\  \hline
+Word N-Grams       & 1      & CN, UNT, JAR, TOR, KYL, ITA, CUN, BOB, OSL, TUE, UAB, CYW, NAI, NRC, MIC, CAR   \\ \hline
+		   & 2      & CN, UNT, JAR, TOR, KYL, ITA, CUN, BOB, OSL, TUE, COR, UAB, CYW, NAI, NRC, HAU, MIC, CAR \\ \hline
+                   & 3      & UNT, MQ, JAR, KYL, CUN, COR, HAU, MIC, CAR  \\ \hline
+                   & 4      & JAR, KYL, CAR   \\ \hline
+		   & 5      & CAR \\ \hline
+POS N-grams        & 1      & CN, UNT, JAR, TOR, ITA, LIM, CUN, BOB, TUE, HAI, CAR  \\ \hline
+		   & 2      & CN, UNT, JAR, TOR, ITA, LIM, CUN, BOB, TUE, COR, HAI, NAI, NRC, MIC, CAR   \\ \hline
+                   & 3      & CN, UNT, JAR, TOR, LIM, CUN, TUE, COR, HAI, NAI, NRC, CAR     \\ \hline
+                   & 4      & CN, JAR, TUE, HAI, NRC, CAR    \\ \hline
+                   & 5      & TUE, CAR \\ \hline
+Character N-Grams  & 1      & CN, UNT, MQ, JAR, TOR, LIM, BOB, OSL, HAI, CAR  \\ \hline
+                   & 2      & CN, UNT, MQ, JAR, TOR, ITA, LIM, BOB, OSL, COR, HAI, NAI, HAU, MIC, CAR  \\ \hline
+                   & 3      & CN, UNT, MQ, JAR, TOR, LIM, BOB, OSL, VTX, COR, HAI, NAI, NRC, HAU, MIC, CAR \\ \hline
+                   & 4      & CN, JAR, LIM, BOB, OSL, HAI, HAU, MIC, CAR \\ \hline
+                   & 5      & CN, JAR, BOB, OSL, HAU, CAR  \\ \hline
+                   & 6      & CN, JAR, OSL,   \\ \hline
+	           & 7      & JAR, OSL \\ \hline
+                   & 8-9    & JAR \\ \hline
+Function N-Grams   &        & MQ, UAB  \\ \hline
+Syntactic Features & Dependencies        & MQ, TOR, ITA, TUE, NAI, NRC \\ \hline
+                   & TSG                 & MQ, TOR, NAI,  \\ \hline
+                   & CF Productions      & TOR, \\ \hline
+		   & Adaptor Grammars  & MQ  \\ \hline
+Spelling Features  &        &   LIM,CN  \\ \hline
+\end{tabular}
+\end{small}
+\caption{Common Features used in Shared Task\label{tab:common-features}}
+\end{table*}
+
+
+\section{Summary} 
+We consider the first edition of the shared task a success as we had
+29 teams competing, which we consider a large number for any
+shared task.  We were also delighted to see many teams build on
+prior work but also try novel approaches.  It is our hope that 
+finally having an evaluation on a common data set with set
+evaluation standards will allow researchers to learn from each
+other on what works well and what does not, and thus the
+field can progress more rapidly.  The evaluation scripts are 
+publicly available and the data will become 
+available through the Linguistic Data Consortium in 2013.  
+
+For future editions of the NLI shared task, we think it would be
+interesting to expand the scope of NLI from identifying the L1
+of student essays to be able to identify the L1 of any piece of 
+writing.  The ICLE and \textsc{TOEFL11} corpora are both
+collections of academic writing and thus it may be the case that
+certain features or methodologies generalize better to other
+writing genres and domains.  For those interested in robust
+NLI approaches, please refer to the TOR team shared task report
+as well as \cite{brooke-hirst:2012:PAPERS}.
+
+In addition, it would be interesting to include evaluation by 
+proficiency level
+as language learners make different types of errors
+and may even have stylistic differences in their writing as their
+proficiency progresses.  
+
 
 \section*{Acknowledgments}
+We would like to thank Derrick Higgins and members of Educational
+Testing Service for assisting us in making the \textsc{TOEFL11} essays
+available for this shared task.  We would also like to thank
+Patrick Houghton for assisting in the evaluation phase of the shared task.
+In addition, thanks goes to the BEA8 Organizers (Joel Tetreault,
+Jill Burstein and Claudia Leacock) for hosting the shared
+task with their workshop.  Finally, we would like to thank all the teams for 
+participating in this first shared task and making it a success.
+Their feedback, patience and excitement levels made organizing this
+shared task a great experience.
 
-Thank the following people:  Derrick Higgins and TOEFL crowd for
-making the \textsc{toefl11} possible.  Patrick Houghton for xyz...all the people
-who participated in the shared task.  BEA organizers...
+
 
 
 
