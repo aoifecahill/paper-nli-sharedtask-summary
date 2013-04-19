@@ -33,14 +33,15 @@ Native Language Identification, or NLI, is the task of automatically classifying
 the L1 of a writer based solely on his or her essay.  This problem area has
 seen a spike in interest in recent years as it can have an impact on
 educational applications tailored towards non-native speakers of a language,
-as well as authorship profiling.  While there has been a growing body of 
-work in NLI, it has been difficult to compare approaches as there have been issues
-with the test corpora commonly used for this task, as well as 
-little consistency in the reporting of results. In this shared task, the first
+as well as authorship profiling.  
+While there has been a growing body of work in NLI, it has been difficult to compare 
+approaches because of the different approaches to pre-processing the data, different 
+sub-sets of languages evaluated and different splits of the data used.
+In this shared task, the first
 ever for Native Language Identification, we sought to
 address the above issues by providing a large corpus designed specifically for NLI,
 in addition to providing an environment for systems to be directly compared.
-In this paper, we report the results of the shared task.  
+In this paper, we report the results of the shared task.
 A total of 29 teams from around the world competed across
 three different subtasks.
 \end{abstract}
@@ -287,15 +288,15 @@ VTEX &  VTX \\ \hline
 
 \section{Shared Task Results}
 
-This section summarizes the results of the shared task.  For each subtask, 
+This section summarizes the results of the shared task.  For each subtask,
 we have tables listing the top submission of each team, its performance in
 accuracy, and its performance by L1.\footnote{For those interested seeing
 the results of all submissions, please contact the authors.}
 
 Table \ref{tab:results:closed} shows results for the Closed sub-task where teams
-developed systems which were trained solely on TOEFL-TRAIN and TOEFL-DEV.  This 
+developed systems which were trained solely on TOEFL-TRAIN and TOEFL-DEV.  This
 was the most popular subtask with 29 teams competing with 116 submissions total
-for the subtask.  Most teams opted to submit 4 or 5 runs.  
+for the subtask.  Most teams opted to submit 4 or 5 runs.
 
 \begin{table*}
 \begin{footnotesize}
@@ -339,14 +340,14 @@ EUR   & 1  & 0.386 & 0.500 & 0.390 & 0.277 & 0.379 & 0.487 & 0.522 & 0.441 & 0.3
 \end{footnotesize}
 \end{table*}
 
-The Open subtasks had far fewer submissions.  Table \ref{tab:results:open1} shows 
+The Open subtasks had far fewer submissions.  Table \ref{tab:results:open1} shows
 results for the Open-1 sub-task where teams could train systems using any training
 data {\it except} for TOEFL-TRAIN and TOEFL-DEV.  Three teams competed in this
-subtask for a total of 13 submissions. 
+subtask for a total of 13 submissions.
 
 Table \ref{tab:results:open2} shows the results for the third subtask ``Open-2''.  Four
 teams competed in this task for a total of 15 submissions.  Interestingly for both
-of the Open subtasks, despite having access to different (and possibly more) data, the 
+of the Open subtasks, despite having access to different (and possibly more) data, the
 top system from the Closed sub-task was slightly higher than the top system from the
 Open-2 subtask (0.836 to 0.835).  One way of viewing this result is that it is
 preferable to keep the training data as close in composition to the test data.  JRT:  not sure
