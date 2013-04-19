@@ -11,8 +11,11 @@
 \usepackage{linguex}
 \usepackage{subfig}
 \usepackage[table]{xcolor}    % also loads colortbl
+\usepackage[T1]{fontenc}
 
 \setlength\titlebox{6.5cm}    % Expanding the titlebox
+
+
 
 \title{A Report on the First Native Language Identification Shared Task}
 
@@ -89,7 +92,7 @@ comparing one approach to another has been extremely difficult.
 
 The first shared task in Native Language Identification (NLI) is intended to
 better unify this community and help the field progress. The Shared Task
-addresses the two deficiencies above by first using a new corpus (TOEFL11,
+addresses the two deficiencies above by first using a new corpus (\textsc{toef11},
 discussed below) which is larger than the ICLE and designed specifically for the
 task of NLI and second, by providing a common set of L1s and evaluation
 standards that everyone will use for this competition, thus facilitating direct
@@ -105,8 +108,8 @@ ideas about what we can do for the next iteration of the NLI shared task.
 
 
 \section{Data}
-The dataset for the task was the new TOEFL11 corpus
-\cite{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR}. TOEFL11
+The dataset for the task was the new \textsc{toefl11} corpus
+\cite{blanchard-tetreault-higgins-cahill-chodorow:2013:TOEFL11-RR}. \textsc{toefl11}
 consists of essays written during a high-stakes college-entrance test, the Test
 of English as a Foreign Language (TOEFL\textsuperscript{\textregistered}). The
 corpus contains 1,100 essays per language sampled as evenly as possible from 8
@@ -115,18 +118,18 @@ The 11 native languages covered by our corpus are: Arabic (ARA), Chinese
 (CHI), French (FRE), German (GER), Hindi (HIN), Italian (ITA), Japanese
 (JAP), Korean (KOR), Spanish (SPA), Telugu (TEL), and Turkish (TUR).
 
-The TOEFL11 corpus was designed specifically to support the task of native
+The \textsc{toefl11} corpus was designed specifically to support the task of native
 language identification.  Because all of the essays were collected through ETS's
 operational test delivery system for the TOEFL\textsuperscript{\textregistered}
 test, the encoding and storage of all texts in the corpus is consistent.
 Furthermore, the sampling of essays was designed to ensure approximately equal
 representation of native languages across topics, insofar as this was possible.
 
-For the shared task, the corpus was split into three sets: training (TOEFL11-TRAIN),
-development (TOEFL11-DEV), and test (TOEFL11-TEST). The train corpus consisted
+For the shared task, the corpus was split into three sets: training (\textsc{toefl11-train}),
+development (\textsc{toefl11-dev}), and test (\textsc{toefl11-test}). The train corpus consisted
 of 900 essays per L1, the development set consisted of 100 essays per L1,
 and the test set consisted of another 100 essays per L1.
-Although the overall TOEFL11 corpus was sampled as evenly
+Although the overall \textsc{toefl11} corpus was sampled as evenly
 as possible with regard to language and prompts, the distribution for each
 language is not exactly the same in the training, development and test sets (see
 Tables~\ref{tab:prompts-train}, \ref{tab:prompts-dev}, and
@@ -136,7 +139,13 @@ essays for a given prompt in the development set, whereas there are none in the
 training set, and only one, Italian, for the test set.
 
 It should be noted that in the first instantiation of the corpus,
-presented in \cite{tetreault-EtAl:2012:PAPERS}, JOEL FILL IN WHAT YOU WANTED TO SAY HERE
+presented in \cite{tetreault-EtAl:2012:PAPERS}, we used \textsc{toefl11}
+to denote the body of data consisting of \textsc{toefl11-train} and \textsc{toefl11-dev}. 
+However, in this shared task, we added 1,100 sentences for a test 
+set and thus use the term \textsc{toefl11} to now denote the corpus 
+consisting of the \textsc{train}, \textsc{dev} and \textsc{test} sets.  We expect the corpus
+to be released through the the Linguistic Data Consortium in 2013.
+
 
 \begin{table*}[ht]
 \begin{small}
@@ -207,17 +216,17 @@ presented in \cite{tetreault-EtAl:2012:PAPERS}, JOEL FILL IN WHAT YOU WANTED TO 
 \section{NLI Shared Task Description}
 
 The shared task consisted of three sub-tasks. For each task, the
-test set was TOEFL11-TEST and only the type of training data varied from
+test set was \textsc{toefl11-TEST} and only the type of training data varied from
 task to task.
 
 \begin{itemize}
 \item {\bf Closed-Training}:  The first and main task was the 11 way
-classification task using only the TOEFL11-TRAIN and TRAIN-DEV for training.
+classification task using only the \textsc{toefl11-train} and \textsc{toefl11-dev} for training.
 \item {\bf Open-Training-1}: The second task allowed the use of any amount or
 type of training data (as is done by \newcite{brooke2011native})
-\emph{excluding} any data from the TOEFL11, but still evaluated on TOEFL-TEST.
-\item {\bf Open-Training-2}: The third task allowed the use of TOEFL11-TRAIN and
-TOEFL11-DEV combined with any other additional data. This most closely reflects
+\emph{excluding} any data from the \textsc{toefl11}, but still evaluated on \textsc{toefl11-test}.
+\item {\bf Open-Training-2}: The third task allowed the use of \textsc{toefl11-train} and
+\textsc{toefl11-dev} combined with any other additional data. This most closely reflects
 a real-world scenario.
 \end{itemize}
 
@@ -294,7 +303,7 @@ accuracy, and its performance by L1.\footnote{For those interested seeing
 the results of all submissions, please contact the authors.}
 
 Table \ref{tab:results:closed} shows results for the Closed sub-task where teams
-developed systems which were trained solely on TOEFL-TRAIN and TOEFL-DEV.  This
+developed systems which were trained solely on \textsc{toefl11-train} and \textsc{toefl11-dev}.  This
 was the most popular subtask with 29 teams competing with 116 submissions total
 for the subtask.  Most teams opted to submit 4 or 5 runs.
 
@@ -342,7 +351,7 @@ EUR   & 1  & 0.386 & 0.500 & 0.390 & 0.277 & 0.379 & 0.487 & 0.522 & 0.441 & 0.3
 
 The Open subtasks had far fewer submissions.  Table \ref{tab:results:open1} shows
 results for the Open-1 sub-task where teams could train systems using any training
-data {\it except} for TOEFL-TRAIN and TOEFL-DEV.  Three teams competed in this
+data {\it except} for \textsc{toefl11-train} and \textsc{toefl11-dev}.  Three teams competed in this
 subtask for a total of 13 submissions.
 
 Table \ref{tab:results:open2} shows the results for the third subtask ``Open-2''.  Four
@@ -452,8 +461,8 @@ Spelling Features  &        &   LIM,CN  \\ \hline
 \section{Cross Validation Results}
 Upon completion of the competition, we asked the participants to
 perform 10-fold cross validation on a data set consisting of the union
-of TOEFL11-TRAIN and TOEFL11-DEV.  This was the same set of data
-used in the first work to use any of the TOEFL11 data
+of \textsc{toefl11-train} and \textsc{toefl11-dev}.  This was the same set of data
+used in the first work to use any of the \textsc{toefl11} data
 \cite{tetreault-EtAl:2012:PAPERS}, and would allow another point of
 comparison for future NLI work.  For direct comparison with
 \newcite{tetreault-EtAl:2012:PAPERS}, we provided the exact folds used in
@@ -461,7 +470,7 @@ that work.
 
 The results of the 10-fold cross validation are shown in Table~\ref{tab:10fold}.
 Two teams had systems that performed at 84.5 or better, which is just
-slightly higher than the best team performance on the TOEFL11-TEST data.  In
+slightly higher than the best team performance on the \textsc{toefl11-TEST} data.  In
 general, systems that performed well in the main competition also
 performed similarly (in terms of performance and ranking) in the
 cross validation experiment.  Please note that we report results as they
@@ -477,7 +486,7 @@ significant digits.
 \textbf{Team Name} & \textbf{Accuracy}\\ \hline
 CN & 84.55 \\ \hline
 JAR & 84.5 \\ \hline
-OSL & 84.1 ???\\ \hline
+OSL & 83.9 \\ \hline
 BUC & 82.6 \\ \hline
 MQ  & 82.46 \\ \hline
 TUE & 82.4 \\ \hline
@@ -503,7 +512,7 @@ Need some sort of wrapup.  consider this a success?
 \section*{Acknowledgments}
 
 Thank the following people:  Derrick Higgins and TOEFL crowd for
-making the TOEFL11 possible.  Patrick Houghton for xyz...all the people
+making the \textsc{toefl11} possible.  Patrick Houghton for xyz...all the people
 who participated in the shared task.  BEA organizers...
 
 
