@@ -356,6 +356,23 @@ NAI & 3  & 0.703 & 0.676 & 0.695 & 0.708 & 0.846 & 0.618 & 0.830 & 0.677 & 0.610
 
 \subsection{Commonalities}
 
+\begin{table*}[htbp]
+\begin{small}
+\begin{tabular}{|l|p{9.5cm}|}
+\hline
+{\bf Machine Learning} & {\bf Teams} \\  \hline
+SVM                    & CN, UNT, MQ, JAR, TOR, ITA, CUN, TUE, COR, NRC, HAU, MIC, CAR  \\ \hline
+MaxEnt / logistic regression                 & LIM, HAI, CAR  \\ \hline
+Ensemble               & MQ, ITA, NRC, CAR           \\ \hline
+Discriminant Function Analysis & KYL \\ \hline
+String Kernels / LRD   & BUC          \\ \hline
+PPM                    & BOB \\ \hline
+k-NN                   & VTX \\ \hline
+\end{tabular}
+\end{small}
+\caption{Machine Learning algorithms used in Shared Task\label{tab:common-features}}
+\end{table*}
+
 
 \begin{table*}[htbp]
 \begin{small}
@@ -381,10 +398,11 @@ Character N-Grams  & 1      & CN, UNT, MQ, JAR, TOR, LIM, BOB, OSL, HAI, CAR  \\
 	           & 7      & JAR, OSL \\ \hline
                    & 8-9    & JAR \\ \hline
 Function N-Grams   &        & MQ, UAB  \\ \hline
-Syntactic Features & Adaptor Grammars        &   \\ \hline
-                   & TSG                 & \\ \hline
-                   & Dependencies        & \\ \hline
-Spelling Features  &        &   \\ \hline
+Syntactic Features & Dependencies        & MQ, TOR, ITA, TUE, NAI, NRC \\ \hline
+                   & TSG                 & MQ, TOR, NAI,  \\ \hline
+                   & CF Productions      & TOR, \\ \hline
+		   & Adaptor Grammars  & MQ  \\ \hline
+Spelling Features  &        &   LIM,CN  \\ \hline
 \end{tabular}
 \end{small}
 \caption{Common Features used in Shared Task\label{tab:common-features}}
