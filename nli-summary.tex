@@ -1,5 +1,4 @@
-%
-% File naaclhlt2012.tex
+
 %
 
 \documentclass[11pt,letterpaper]{article}
@@ -39,14 +38,14 @@ educational applications tailored towards non-native speakers of a language,
 as well as authorship profiling.
 While there has been a growing body of work in NLI, it has been difficult to compare
 methodologies because of the different approaches to pre-processing the data, different
-sub-sets of languages evaluated and different splits of the data used.
+sets of languages evaluated, and different splits of the data used.
 In this shared task, the first
 ever for Native Language Identification, we sought to
 address the above issues by providing a large corpus designed specifically for NLI,
 in addition to providing an environment for systems to be directly compared.
 In this paper, we report the results of the shared task.
 A total of 29 teams from around the world competed across
-three different subtasks.
+three different sub-tasks.
 \end{abstract}
 
 \section{Introduction}
@@ -89,12 +88,12 @@ draw conclusions about which features actually perform best. The second issue is
 that there has been little consistency in the field in the use of
 cross-validation, the number of L1s, and which L1s are used. As a result,
 comparing one approach to another has been extremely difficult.
-%Were we really the first to notice that some characters only appeared in some languages?
+%Were we really the first to notice that some characters only appeared in some languages? Dan thinks so. 
 
-The first shared task in Native Language Identification is intended to
+The first Shared Task in Native Language Identification is intended to
 better unify this community and help the field progress. The Shared Task
 addresses the two deficiencies above by first using a new corpus (\textsc{toef11},
-discussed in Section~\ref{sec-data}) which is larger than the ICLE and designed specifically for the
+discussed in Section~\ref{sec-data}) that is larger than the ICLE and designed specifically for the
 task of NLI and second, by providing a common set of L1s and evaluation
 standards that everyone will use for this competition, thus facilitating direct
 comparison of approaches. In this report we describe the methods most
@@ -106,12 +105,12 @@ In the following section, we provide a summary of the prior work in
 Native Language Identification.  Next, in Section~\ref{sec-data} we describe
 the \textsc{toefl11} corpus used for training, development and testing in
 this shared task. Section~\ref{sec-shared-task-description} describes the
-three subtasks of the NLI Shared Task as well as a review of the timeline.
+three sub-tasks of the NLI Shared Task as well as a review of the timeline.
 Section~\ref{sec-teams} lists the 29 teams that participated
 in the shared task, and introduce abbreviations that will be used throughout this paper.  Sections~\ref{sec-results}
 and~\ref{sec-cross-validation} describe the results of the shared task and a
 separate post shared task evaluation where we asked teams to evaluate their
-system using cross validation on a combination of the training and development data.  In
+system using cross-validation on a combination of the training and development data.  In
 Section~\ref{sec-commonalities} we provide a high-level view of the common
 features and machine learning methods teams tended to use.  Finally,
 we offer conclusions and ideas for future instantiations of the shared task
@@ -146,10 +145,10 @@ to include as well as whether to encode the feature as binary (presence
 or absence of the particular n-gram) or as a normalized count.
 
 
-The inclusion of syntactic features have been a focus in recent work.
-Wong and Dras \shortcite{wong-dras:2011:EMNLP} explored the use of production rules
-from two parsers and Swanson and Charniak \shortcite{swanson-charniak:2012:ACL2012short} explored
-the use of Tree Substitution Grammars (TSGs).  Tetreault et al. \shortcite{tetreault-EtAl:2012:PAPERS} also investigated the use of TSGs as well as dependency
+The inclusion of syntactic features has been a focus in recent work.
+ \newcite{wong-dras:2011:EMNLP} explored the use of production rules
+from two parsers and \newcite{swanson-charniak:2012:ACL2012short} explored
+the use of Tree Substitution Grammars (TSGs).  \newcite{tetreault-EtAl:2012:PAPERS} also investigated the use of TSGs as well as dependency
 features extracted from the Stanford parser.
 
 Other approaches to NLI have included the use of Latent Dirichlet Analysis
@@ -265,7 +264,7 @@ essays for a given prompt in the development set, whereas there are none in the
 training set, and only one, Italian, for the test set.
 
 It should be noted that in the first instantiation of the corpus,
-presented in Tetreault et al. \shortcite{tetreault-EtAl:2012:PAPERS}, we used \textsc{toefl11}
+presented in \newcite{tetreault-EtAl:2012:PAPERS}, we used \textsc{toefl11}
 to denote the body of data consisting of \textsc{toefl11-train} and \textsc{toefl11-dev}.
 However, in this shared task, we added 1,100 sentences for a test
 set and thus use the term \textsc{toefl11} to now denote the corpus
@@ -360,25 +359,25 @@ VTEX &  VTX \\ \hline
 
 \section{Shared Task Results}
 \label{sec-results}
-This section summarizes the results of the shared task.  For each subtask,
-we have tables listing the top submission of each team, its performance in
-accuracy, and its performance by L1.\footnote{For those interested in
+This section summarizes the results of the shared task.  For each sub-task,
+we have tables listing the top submission for each team and its performance by overall
+accuracy and by L1.\footnote{For those interested in
 the results of all submissions, please contact the authors.}
 
 Table \ref{tab:results:closed} shows results for the Closed sub-task where teams
-developed systems which were trained solely on \textsc{toefl11-train} and \textsc{toefl11-dev}.  This
-was the most popular subtask with 29 teams competing and 116 submissions in total
-for the subtask.  Most teams opted to submit 4 or 5 runs.
+developed systems that were trained solely on \textsc{toefl11-train} and \textsc{toefl11-dev}.  This
+was the most popular sub-task with 29 teams competing and 116 submissions in total
+for the sub-task.  Most teams opted to submit 4 or 5 runs.
 
 
 
-The Open subtasks had far fewer submissions.  Table \ref{tab:results:open1} shows
+The Open sub-tasks had far fewer submissions.  Table \ref{tab:results:open1} shows
 results for the Open-1 sub-task where teams could train systems using any training
 data {\it excluding} \textsc{toefl11-train} and \textsc{toefl11-dev}.  Three teams competed in this
-subtask for a total of 13 submissions.
+sub-task for a total of 13 submissions.  Table \ref{tab:results:open2} shows the results for the third sub-task ``Open-2''.  Four
+teams competed in this task for a total of 15 submissions. 
 
-Table \ref{tab:results:open2} shows the results for the third subtask ``Open-2''.  Four
-teams competed in this task for a total of 15 submissions. The challenge for those 
+The challenge for those 
 competing in the Open tasks was finding enough non-\textsc{TOEFL11} data for each L1
 to train a classifier.  External corpora commonly used in the competition included
 the:
@@ -415,9 +414,9 @@ their respective best systems in the Closed and Open-1 sub-tasks.  This suggests
 adding more data can benefit NLI, though quality of data (how similar in genre) is also an important
 factor.
 
-%Interestingly for both of the Open subtasks, despite having access to more date in the case of certain L1s, 
+%Interestingly for both of the Open sub-tasks, despite having access to more date in the case of certain L1s, 
 %the top system from the Closed sub-task was slightly higher than the top system from the
-%Open-2 subtask (0.836 to 0.835).  One way of viewing this result is that 
+%Open-2 sub-task (0.836 to 0.835).  One way of viewing this result is that 
 %the issue of domain adaptation is very important in this field. Unsurprisingly, it is possible 
 %to do very well if the training and test domains are the same, however the addition of more data 
 %(e.g. the TOR team collected data from several additional sources) did not help increase
@@ -512,7 +511,7 @@ NAI & 3  & 0.703 & 0.676 & 0.695 & 0.708 & 0.846 & 0.618 & 0.830 & 0.677 & 0.610
 \section{Cross Validation Results}
 \label{sec-cross-validation}
 Upon completion of the competition, we asked the participants to
-perform 10-fold cross validation on a data set consisting of the union
+perform 10-fold cross-validation on a data set consisting of the union
 of \textsc{toefl11-train} and \textsc{toefl11-dev}.  This was the same set of data
 used in the first work to use any of the \textsc{toefl11} data
 \cite{tetreault-EtAl:2012:PAPERS}, and would allow another point of
@@ -520,12 +519,12 @@ comparison for future NLI work.  For direct comparison with
 \newcite{tetreault-EtAl:2012:PAPERS}, we provided the exact folds used in
 that work.
 
-The results of the 10-fold cross validation are shown in Table~\ref{tab:10fold}.
+The results of the 10-fold cross-validation are shown in Table~\ref{tab:10fold}.
 Two teams had systems that performed at 84.5 or better, which is just
 slightly higher than the best team performance on the \textsc{toefl11-test} data.  In
 general, systems that performed well in the main competition also
 performed similarly (in terms of performance and ranking) in the
-cross validation experiment.  Please note that we report results as they
+cross-validation experiment.  Please note that we report results as they
 are reported in the respective papers, rounding to just one decimal place
 where possible. 
 %hence the differences in
@@ -571,13 +570,13 @@ in the 24 team reports.
 
 While there are many machine learning algorithms to choose from, the overwhelming
 majority of teams used Support Vector Machines.  This may not be surprising
-given that most prior work has also used SVMs.  Tetreault et al.
-\shortcite{tetreault-EtAl:2012:PAPERS} showed that one could achieve even higher
+given that most prior work has also used SVMs. 
+\newcite{tetreault-EtAl:2012:PAPERS} showed that one could achieve even higher
 performance on the NLI task using ensemble methods for combining classifiers.
 Four teams also experimented with different ways of using ensemble methods.
 Three teams used Maximum Entropy methods for their modeling.
 Finally, there were a few other teams that tried different methods such as
-Discriminat Functional Analysis and K- Nearest Neighbors.  Possibly the most
+Discriminant Function Analysis and K-Nearest Neighbors.  Possibly the most
 distinct method employed was that of string kernels by the BUC team (who placed
 third in the closed competition).  This method only used character level features.  
 A summary of the machine learning methods is shown in Table~\ref{tab:common-machine-learning}.
@@ -606,7 +605,7 @@ k-NN                   & VTX \\ \hline
 A summary of the common features used across teams is shown in Table~\ref{tab:common-features}.  It should be noted that the table does not detail the nuanced differences in
 how the features are realized.  For example, in the case of n-grams, some teams
 used only the top $k$ most frequently n-grams while others used all of the n-grams
-available.  If interested in more information about how the particulars of a system
+available.  If interested in more information about the particulars of a system
 and its feature, we recommend reading the team's summary report.
 
 The most common features were word, character and POS n-gram
@@ -615,13 +614,13 @@ prior literature.  However several teams used higher-order n-grams.  In fact, fo
 of the top five teams (JAR, OSL, CAR, TUE) generally used at least 4-grams, and some,
 such as OSL and JAR, went as high 7 and 9 respectively in terms of character n-grams.
 
-Syntactic features, which were first evaluated in Wong and Dras \shortcite{wong-dras:2011:EMNLP} and Swanson and Charniak \shortcite{swanson-charniak:2012:ACL2012short} were used
+Syntactic features, which were first evaluated in \newcite{wong-dras:2011:EMNLP} and \newcite{swanson-charniak:2012:ACL2012short} were used
 by six teams in the competition, with most using dependency parses in different ways.
-Interestingly, while Wong and Dras \shortcite{wong-dras:2011:EMNLP} showed some of the
+Interestingly, while \newcite{wong-dras:2011:EMNLP} showed some of the
 highest performance scores on the ICLE corpus using parse features, only two of the six
 teams which used them placed in the top ten in the Closed sub-task.
 
-Spelling features were championed in the Koppel et al. \shortcite{koppel2005determining}
+Spelling features were championed by \newcite{koppel2005determining}
 and in subsequent NLI work, however only three teams in the competition used them.
 
 There were several novel features that teams tried.  For example,
