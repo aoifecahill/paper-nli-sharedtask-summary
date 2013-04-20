@@ -299,26 +299,30 @@ the results of all submissions, please contact the authors.}
 
 Table \ref{tab:results:closed} shows results for the Closed sub-task where teams
 developed systems which were trained solely on \textsc{toefl11-train} and \textsc{toefl11-dev}.  This
-was the most popular subtask with 29 teams competing with 116 submissions total
+was the most popular subtask with 29 teams competing and 116 submissions in total
 for the subtask.  Most teams opted to submit 4 or 5 runs.
 
 
 
 The Open subtasks had far fewer submissions.  Table \ref{tab:results:open1} shows
 results for the Open-1 sub-task where teams could train systems using any training
-data {\it except} for \textsc{toefl11-train} and \textsc{toefl11-dev}.  Three teams competed in this
+data {\it excluding} \textsc{toefl11-train} and \textsc{toefl11-dev}.  Three teams competed in this
 subtask for a total of 13 submissions.
 
 Table \ref{tab:results:open2} shows the results for the third subtask ``Open-2''.  Four
 teams competed in this task for a total of 15 submissions.  Interestingly for both
 of the Open subtasks, despite having access to different (and possibly more) data, the
 top system from the Closed sub-task was slightly higher than the top system from the
-Open-2 subtask (0.836 to 0.835).  One way of viewing this result is that it is
-preferable to keep the training data as close in composition to the test data, however,
-the ``close'' result might only be a function of how much public L1 data is available
-for this task.  For example, the TOR submission had to collect data from several different
-sources.
-
+Open-2 subtask (0.836 to 0.835).  One way of viewing this result is that %it is
+%preferable to keep the training data as close in composition to the test data, however,
+%the ``close'' result might only be a function of how much public L1 data is available
+%for this task.  For example, the TOR submission had to collect data from several different
+%sources.
+the issue of domain adaptation is very important in this field. Unsurprisingly, it is possible 
+to do very well if the training and test domains are the same, however the addition of more data 
+(e.g. the TOR team collected data from several additional sources) did not help increase
+performance on this test data. 
+%why are we singling TOR out? What about TUE? where did their extra data come from?
 
 \begin{table*}[!htbp]
 \begin{footnotesize}
