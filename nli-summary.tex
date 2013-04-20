@@ -135,14 +135,24 @@ to include as well as whether to encode the feature as binary (presence
 or absence of the particular n-gram) or as a normalized count.  
 
 The inclusion of syntactic features have been a focus in recent work.
-\shortcite{wong-dras:2011:EMNLP} explored the use of production rules
-from two parsers and \shortcite{swanson-charniak:2012:ACL2012short} explored
-the use of Tree Substitution Grammars (TSGs).  \shortcite{tetreault-EtAl:2012:PAPERS} also investigated the use of TSGs as well as dependency
+Wong and Dras \shortcite{wong-dras:2011:EMNLP} explored the use of production rules
+from two parsers and Swanson and Charniak \shortcite{swanson-charniak:2012:ACL2012short} explored
+the use of Tree Substitution Grammars (TSGs).  Tetreault et al. \shortcite{tetreault-EtAl:2012:PAPERS} also investigated the use of TSGs as well as dependency
 features extracted from the Stanford parser.  
 
 Other approaches to NLI have included the use of Latent Dirichlet Analysis
-to cluster features \cite{}
+to cluster features \cite{Sze-MengJojoWongMarkDrasMarkJohnson:2011:ALTA2011},
+adaptor grammars \cite{wong-dras-johnson:2012:EMNLP-CoNLL}, and 
+language models \cite{tetreault-EtAl:2012:PAPERS}.  Additionally, there has
+been research into the effects of training and testing on different 
+corpora \cite{brooke2011native}.  
 
+Much of the aforementioned work takes the perspective of optimizing for the 
+task of Native Language Identification, that is, what is the best way of 
+modeling the problem to get the highest system accuracy?  The problem 
+of Native Language Identification is also of interest to researchers in
+Second Language Acquisition where they seek to explain syntactic transfer
+in learner language \cite{jarvis2012approaching}.
 
 \section{Data}
 \label{sec-data}
@@ -177,7 +187,7 @@ essays for a given prompt in the development set, whereas there are none in the
 training set, and only one, Italian, for the test set.
 
 It should be noted that in the first instantiation of the corpus,
-presented in \cite{tetreault-EtAl:2012:PAPERS}, we used \textsc{toefl11}
+presented in Tetreault et al. \shortcite{tetreault-EtAl:2012:PAPERS}, we used \textsc{toefl11}
 to denote the body of data consisting of \textsc{toefl11-train} and \textsc{toefl11-dev}. 
 However, in this shared task, we added 1,100 sentences for a test 
 set and thus use the term \textsc{toefl11} to now denote the corpus 
