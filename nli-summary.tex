@@ -123,11 +123,11 @@ In this section, we provide an overview of some of the common
 approaches used for NLI prior to this shared task.  While a
 comprehensive review is outside the scope of this paper, we have compiled a
 bibliography of related work in the field. It can be downloaded
-from the NLI Shared Task website.\footnote{http://nlisharedtask2013.org/bibliography-of-related-work-in-nli}.
+from the NLI Shared Task website.\footnote{http://nlisharedtask2013.org/bibliography-of-related-work-in-nli}
 
 To date, nearly all approaches have treated the task of NLI as a
 supervised classification problem where statistical models are trained on
-data from the different L1s.  The work of \shortcite{koppel2005determining}
+data from the different L1s.  The work of \newcite{koppel2005determining}
 was the first in the field and they explored a multitude of features, many
 of which are employed in several of the systems in the shared tasks.  These
 features included character and POS n-grams, content and function words,
@@ -137,10 +137,10 @@ An SVM model was trained on these features extracted from a subsection of
 the ICLE corpus consisting of 5 L1s.
 
 N-gram features (word, character and POS)  have figured
-prominently prior work.  Not only are they
+prominently in prior work.  Not only are they
 easy to compute, but they can be quite predictive.  However, there are
 many variations on the features.  Past reseach efforts have explored
-different n-gram windows (though most tend to focus on uni-grams and bi-grams),different thresholds for how many n-grams
+different n-gram windows (though most tend to focus on unigrams and bigrams), different thresholds for how many n-grams
 to include as well as whether to encode the feature as binary (presence
 or absence of the particular n-gram) or as a normalized count.
 
