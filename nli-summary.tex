@@ -52,7 +52,7 @@ three different subtasks.
 \section{Introduction}
 \label{sec-intro}
 One quickly growing subfield in NLP is the task of identifying the native
-language (L1) of a writer based solely on a sample of their writing. The task
+language (L1) of a writer based solely on a sample of their writing in another language. The task
 is framed as a classification problem where the set of L1s is known \emph{a priori}.
 Most work has focused on identifying the native language of writers
 learning English as a second language. To date this topic has motivated
@@ -89,6 +89,7 @@ draw conclusions about which features actually perform best. The second issue is
 that there has been little consistency in the field in the use of
 cross-validation, the number of L1s, and which L1s are used. As a result,
 comparing one approach to another has been extremely difficult.
+%Were we really the first to notice that some characters only appeared in some languages?
 
 The first shared task in Native Language Identification is intended to
 better unify this community and help the field progress. The Shared Task
@@ -98,7 +99,7 @@ task of NLI and second, by providing a common set of L1s and evaluation
 standards that everyone will use for this competition, thus facilitating direct
 comparison of approaches. In this report we describe the methods most
 participants used, the data they evaluated their systems on, the three sub-tasks
-involved, the results achieved by the different teams, and some suggestions
+involved, the results achieved by the different teams, and some suggestions and
 ideas about what we can do for the next iteration of the NLI shared task.
 
 In the following section, we provide a summary of the prior work in
@@ -107,10 +108,10 @@ the \textsc{toefl11} corpus used for training, development and testing in
 this shared task. Section~\ref{sec-shared-task-description} describes the
 three subtasks of the NLI Shared Task as well as a review of the timeline.
 Section~\ref{sec-teams} lists the 29 teams that participated
-in the shared task, as well as their abbreviations.  Sections~\ref{sec-results}
+in the shared task, and introduce acronyms that will be used throughout this paper.  Sections~\ref{sec-results}
 and~\ref{sec-cross-validation} describe the results of the shared task and a
 separate post shared task evaluation where we asked teams to evaluate their
-system on a combination of the training and development data.  In
+system using cross validation on a combination of the training and development data.  In
 Section~\ref{sec-commonalities} we provide a high-level view of the common
 features and machine learning methods teams tended to use.  Finally,
 we offer conclusions and ideas for future instantiations of the shared task
