@@ -90,7 +90,7 @@ that there has been little consistency in the field in the use of
 cross-validation, the number of L1s, and which L1s are used. As a result,
 comparing one approach to another has been extremely difficult.
 
-The first shared task in Native Language Identification (NLI) is intended to
+The first shared task in Native Language Identification is intended to
 better unify this community and help the field progress. The Shared Task
 addresses the two deficiencies above by first using a new corpus (\textsc{toef11},
 discussed in Section~\ref{sec-data}) which is larger than the ICLE and designed specifically for the
@@ -104,7 +104,17 @@ ideas about what we can do for the next iteration of the NLI shared task.
 In the following section, we provide a summary of the prior work in
 Native Language Identification.  Next, in Section~\ref{sec-data} we describe 
 the \textsc{toefl11} corpus used for training, development and testing in 
-this shared task. In Sections~\ref{sec-teams}....
+this shared task. Section~\ref{sec-shared-task-description} describes the
+three subtasks of the NLI Shared Task as well as a review of the timeline.
+Section~\ref{sec-teams} lists the 29 teams that participated
+in the shared task, as well as their abbreviations.  Sections~\ref{sec-results}
+and~\ref{sec-cross-validation} describe the results of the shared task and a
+separate post shared task evaluation where we asked teams to evaluate their
+system on a combination of the training and development data.  In
+Section~\ref{sec-commonalities} we provide a high-level view of the common
+features and machine learning methods teams tended to use.  Finally, 
+we offer conclusions and ideas for future instantiations of the shared task
+in Section~\ref{sec-summary}.
 
 \section{Related Work}
 \label{sec-relatedwork}
@@ -123,8 +133,7 @@ features included character and POS n-grams, content and function words,
 as well as spelling and grammatical errors (since language learners have
 tendencies to make certain errors based on their L1 \cite{SwanSmith01}).
 An SVM model was trained on these features extracted from a subsection of 
-ICLE corpus consisting of 5 L1s.   These features would figure prominently
-in later work such as \cite{wong-dras:2011:EMNLP} and \cite{tetreault-EtAl:2012:PAPERS}.  
+the ICLE corpus consisting of 5 L1s.   
 
 N-gram features (word, character and POS)  have figured 
 prominently prior work.  Not only are they
@@ -145,7 +154,7 @@ to cluster features \cite{Sze-MengJojoWongMarkDrasMarkJohnson:2011:ALTA2011},
 adaptor grammars \cite{wong-dras-johnson:2012:EMNLP-CoNLL}, and 
 language models \cite{tetreault-EtAl:2012:PAPERS}.  Additionally, there has
 been research into the effects of training and testing on different 
-corpora \cite{brooke2011native}.  
+corpora \cite{brooke2011native}.
 
 Much of the aforementioned work takes the perspective of optimizing for the 
 task of Native Language Identification, that is, what is the best way of 
@@ -262,7 +271,7 @@ to be released through the the Linguistic Data Consortium in 2013.
 
 
 \section{NLI Shared Task Description}
-
+\label{sec-shared-task-description}
 The shared task consisted of three sub-tasks. For each task, the
 test set was \textsc{toefl11-TEST} and only the type of training data varied from
 task to task.
@@ -303,7 +312,7 @@ of participating times, along with their team abbreviations, can be
 found in Table~\ref{tab:teams}.
 
 
-\begin{table*}[htbp]
+\begin{table*}[!htbp]
 \begin{center}
 \begin{tabular}{|l|l|}
 \hline
@@ -347,7 +356,7 @@ VTEX &  VTX \\ \hline
 \label{sec-results}
 This section summarizes the results of the shared task.  For each subtask,
 we have tables listing the top submission of each team, its performance in
-accuracy, and its performance by L1.\footnote{For those interested seeing
+accuracy, and its performance by L1.\footnote{For those interested in
 the results of all submissions, please contact the authors.}
 
 Table \ref{tab:results:closed} shows results for the Closed sub-task where teams
@@ -407,12 +416,14 @@ teams competed in this task for a total of 15 submissions.  Interestingly for bo
 of the Open subtasks, despite having access to different (and possibly more) data, the
 top system from the Closed sub-task was slightly higher than the top system from the
 Open-2 subtask (0.836 to 0.835).  One way of viewing this result is that it is
-preferable to keep the training data as close in composition to the test data.  JRT:  not sure
-if I want to make this claim.
+preferable to keep the training data as close in composition to the test data, however,
+the ``close'' result might only be a function of how much public L1 data is available
+for this task.  For example, the TOR submission had to collect data from several different
+sources.
 
-{\bf JOEL: say what data they trained on!!!}
 
-\begin{table*}
+
+\begin{table*}[htbp]
 \begin{footnotesize}
 \rowcolors{2}{gray!25}{white}
 \begin{tabular}{|p{1cm}|c|p{1cm}|r|r|r|r|r|r|r|r|r|r|r|r|}
@@ -429,7 +440,7 @@ NAI & 2  & 0.356 & 0.329 & 0.450 & 0.331 & 0.423 & 0.066 & 0.511 & 0.426 & 0.481
 \end{table*}
 
 
-\begin{table*}
+\begin{table*}[htbp]
 \begin{footnotesize}
 \rowcolors{2}{gray!25}{white}
 \begin{tabular}{|p{1cm}|c|p{1cm}|r|r|r|r|r|r|r|r|r|r|r|r|}
@@ -453,7 +464,7 @@ NAI & 3  & 0.703 & 0.676 & 0.695 & 0.708 & 0.846 & 0.618 & 0.830 & 0.677 & 0.610
 
 
 \section{Cross Validation Results}
-\
+\label{sec-cross-validation}
 Upon completion of the competition, we asked the participants to
 perform 10-fold cross validation on a data set consisting of the union
 of \textsc{toefl11-train} and \textsc{toefl11-dev}.  This was the same set of data
@@ -475,7 +486,7 @@ significant digits.
 
 
 
-\begin{table}[htbp]
+\begin{table*}[htbp]
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Team Name} & \textbf{Accuracy}\\ \hline
@@ -493,12 +504,10 @@ LIM & 75.89  \\ \hline
 CUN & 74.2\\ \hline
 UNT  & 63.77 \\ \hline
 MIC & 63 \\ \hline
-
-
 \end{tabular}
 \caption{Results for 10-fold cross-validation on TOEFL-Train $+$ TOEFL-Dev
 \label{tab:10fold}}
-\end{table}
+\end{table*}
 
 \section{Discussion of Approaches}
 \label{sec-commonalities}
@@ -507,7 +516,8 @@ whether there were any commonalities in learning methods or features
 between the teams.  In this section, we provide a coarse grained summary
 of the common machine learning methods teams employed as well as some of 
 the common features.  Our summary is based on the information provided
-in the 24 team reports.\footnote{29 teams competed but 24 teams submitted reports}.  
+in the 24 team reports.
+%%\footnote{29 teams competed but 24 teams submitted reports}.  
 
 \begin{table*}[htbp]
 \begin{small}
@@ -563,9 +573,15 @@ Spelling Features  &        &   LIM,CN  \\ \hline
 
 
 \section{Summary} 
+\label{sec-summary}
 We consider the first edition of the shared task a success as we had
 29 teams competing, which we consider a large number for any
-shared task.  We were also delighted to see many teams build on
+shared task.  Also of note is that the task brought together
+researchers not only from the Computational Linguistics community,
+but also those from other linguistics fields such as Second
+Language Acquisition.
+
+We were also delighted to see many teams build on
 prior work but also try novel approaches.  It is our hope that 
 finally having an evaluation on a common data set with set
 evaluation standards will allow researchers to learn from each
@@ -584,14 +600,19 @@ writing genres and domains.  For those interested in robust
 NLI approaches, please refer to the TOR team shared task report
 as well as \cite{brooke-hirst:2012:PAPERS}.
 
-In addition, it would be interesting to include evaluation by 
+In addition, since the \textsc{TOEFL11} data contains proficiency level
+one could include an evaluation by 
 proficiency level
 as language learners make different types of errors
 and may even have stylistic differences in their writing as their
 proficiency progresses.  
 
-Another related work - how well do human raters do?
-
+Finally, while this may be in the periphery of the scope of an
+NLI shared task, one interesting evaluation is to see how well
+human raters can fare on this task.  This would of course involve
+knowledgeable language instructors who have years of experience 
+in teaching students from different L1s.  Our thinking is that NLI
+might be one task where computers would outperform human annotators.
 
 \section*{Acknowledgments}
 We would like to thank Derrick Higgins and members of Educational
