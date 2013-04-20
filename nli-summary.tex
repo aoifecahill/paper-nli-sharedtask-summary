@@ -259,7 +259,7 @@ Although the overall \textsc{toefl11} corpus was sampled as evenly
 as possible with regard to language and prompts, the distribution for each
 language is not exactly the same in the training, development and test sets (see
 Tables~\ref{tab:prompts-train}, \ref{tab:prompts-dev}, and
-\ref{tab:prompts-test} at the end of this paper). In fact, the distribution is much closer between the
+\ref{tab:prompts-test}). In fact, the distribution is much closer between the
 training and test sets, as there are several languages for which there are no
 essays for a given prompt in the development set, whereas there are none in the
 training set, and only one, Italian, for the test set.
@@ -383,34 +383,48 @@ competing in the Open tasks was finding enough non-\textsc{TOEFL11} data for eac
 to train a classifier.  External corpora commonly used in the competition included
 the:
 
-TUE: ICLE, FCE, BALC, ICNALE, TUTEL
+%% TUE: ICLE, FCE, BALC, ICNALE, TUTEL
 
 
 \begin{itemize}
-\item {bf ICLE}: which covered all L1s except for Arabic, Hindi and Telugu;  
+\item {\bf ICLE}: which covered all L1s except for Arabic, Hindi and Telugu;  
 \item {\bf FCE: First Certificate in English Corpus} \cite{yannakoudakis-briscoe-medlock:2011:ACL-HLT2011}: a collection
 of essay written for an English assessment exam, which covered all L1s except for Arabic, Hindi and Telugu
 \item {\bf ICNALE: International Corpus Network of Asian Learners of English} \cite{Ishikawa:2011}: a collection of essays 
 written by Chinese, Japanese and Korean learners of English along with 7 other L1s with Asian backgrounds.
+\item {\bf Lang8: http://www.lang8.com}: a social networking service where users write in the
+language they are learning, and get corrections from users who are native speakers of that language. Shared Task
+participants such as NAI and TOR scraped the website for all writng samples from English language learners.
+All of the L1s in the shared task are represented on the site, though the Asian L1s 
+dominate. 
 \end{itemize}
 
+The most challenging L1s to find data for seemed to be Hindi and Telugu.  TUE used essays written by Pakastani
+students in the ICNALE corpus to substitute for Hindi.  For Telugu, they scraped material from bilingual blogs
+(English-Telugu) as well as other material for the web.  TOR created corpora for
+Telugu and Hindi by scraping news articles, tweets which were geolocated in the 
+Hindi and Telugu speaking areas, and translations of Hindi and Telugu blogs using
+Google Translate.
+
+We caution directly comparing the results of the Closed sub-task to the Open ones.  In the Open-1 sub-task
+most teams had smaller training sets than used in the Closed competition which automatically
+disadvantages them, and in some cases there was a mismatch in the genre of corpora (for example, tweets
+by Telugu speakers are different in composition than essays written by Telugu speakers).  TUE and TOR
+were the only two teams to participate in all three sub-tasks, and their Open-2 systems outperformed
+their respective best systems in the Closed and Open-1 sub-tasks.  This suggests, unsurprisingly, that
+adding more data can benefit NLI, though quality of data (how similar in genre) is also an important
+factor.
+
+%Interestingly for both of the Open subtasks, despite having access to more date in the case of certain L1s, 
+%the top system from the Closed sub-task was slightly higher than the top system from the
+%Open-2 subtask (0.836 to 0.835).  One way of viewing this result is that 
+%the issue of domain adaptation is very important in this field. Unsurprisingly, it is possible 
+%to do very well if the training and test domains are the same, however the addition of more data 
+%(e.g. the TOR team collected data from several additional sources) did not help increase
+%performance on this test data. 
 
 
- Interestingly for both
-of the Open subtasks, despite having access to different (and possibly more) data, the
-top system from the Closed sub-task was slightly higher than the top system from the
-Open-2 subtask (0.836 to 0.835).  One way of viewing this result is that %it is
-%preferable to keep the training data as close in composition to the test data, however,
-%the ``close'' result might only be a function of how much public L1 data is available
-%for this task.  For example, the TOR submission had to collect data from several different
-%sources.
-the issue of domain adaptation is very important in this field. Unsurprisingly, it is possible 
-to do very well if the training and test domains are the same, however the addition of more data 
-(e.g. the TOR team collected data from several additional sources) did not help increase
-performance on this test data. 
 
-
-%why are we singling TOR out? What about TUE? where did their extra data come from?
 
 \begin{table*}[!htbp]
 \begin{footnotesize}
