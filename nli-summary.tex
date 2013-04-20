@@ -378,7 +378,25 @@ data {\it excluding} \textsc{toefl11-train} and \textsc{toefl11-dev}.  Three tea
 subtask for a total of 13 submissions.
 
 Table \ref{tab:results:open2} shows the results for the third subtask ``Open-2''.  Four
-teams competed in this task for a total of 15 submissions.  Interestingly for both
+teams competed in this task for a total of 15 submissions. The challenge for those 
+competing in the Open tasks was finding enough non-\textsc{TOEFL11} data for each L1
+to train a classifier.  External corpora commonly used in the competition included
+the:
+
+TUE: ICLE, FCE, BALC, ICNALE, TUTEL
+
+
+\begin{itemize}
+\item {bf ICLE}: which covered all L1s except for Arabic, Hindi and Telugu;  
+\item {\bf FCE: First Certificate in English Corpus} \cite{yannakoudakis-briscoe-medlock:2011:ACL-HLT2011}: a collection
+of essay written for an English assessment exam, which covered all L1s except for Arabic, Hindi and Telugu
+\item {\bf ICNALE: International Corpus Network of Asian Learners of English} \cite{Ishikawa:2011}: a collection of essays 
+written by Chinese, Japanese and Korean learners of English along with 7 other L1s with Asian backgrounds.
+\end{itemize}
+
+
+
+ Interestingly for both
 of the Open subtasks, despite having access to different (and possibly more) data, the
 top system from the Closed sub-task was slightly higher than the top system from the
 Open-2 subtask (0.836 to 0.835).  One way of viewing this result is that %it is
@@ -390,6 +408,8 @@ the issue of domain adaptation is very important in this field. Unsurprisingly, 
 to do very well if the training and test domains are the same, however the addition of more data 
 (e.g. the TOR team collected data from several additional sources) did not help increase
 performance on this test data. 
+
+
 %why are we singling TOR out? What about TUE? where did their extra data come from?
 
 \begin{table*}[!htbp]
