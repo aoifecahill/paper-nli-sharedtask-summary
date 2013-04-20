@@ -190,7 +190,7 @@ Although the overall \textsc{toefl11} corpus was sampled as evenly
 as possible with regard to language and prompts, the distribution for each
 language is not exactly the same in the training, development and test sets (see
 Tables~\ref{tab:prompts-train}, \ref{tab:prompts-dev}, and
-\ref{tab:prompts-test}). In fact, the distribution is much closer between the
+\ref{tab:prompts-test} at the end of this paper). In fact, the distribution is much closer between the
 training and test sets, as there are several languages for which there are no
 essays for a given prompt in the development set, whereas there are none in the
 training set, and only one, Italian, for the test set.
@@ -202,72 +202,6 @@ However, in this shared task, we added 1,100 sentences for a test
 set and thus use the term \textsc{toefl11} to now denote the corpus 
 consisting of the \textsc{train}, \textsc{dev} and \textsc{test} sets.  We expect the corpus
 to be released through the the Linguistic Data Consortium in 2013.
-
-
-\begin{table*}[ht]
-\begin{small}
-\begin{center}
-
-\subfloat[Training Set]{\label{tab:prompts-train}
-        \begin{tabular}{lrrrrrrrr}
-            \hline
-            \textbf{Lang.} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{P8}\\ \hline
-            ARA     &  113 & 113 & 113 & 112 & 112 & 113 & 112 & 112 \\ \hline
-            CHI    &  113 & 113 & 113 & 112 & 112 & 113 & 112 & 112 \\ \hline
-            FRE     &  128 & 128 & 76  & 127 & 127 & 60  & 127 & 127 \\ \hline
-            GER     &  125 & 125 & 125 & 125 & 125 & 26  & 125 & 124 \\ \hline
-            HIN      &  132 & 132 & 132 & 71  & 132 & 38  & 132 & 131 \\ \hline
-            ITA    &  142 & 70  & 122 & 141 & 141 & 12  & 141 & 131 \\ \hline
-            JAP   &  108 & 114 & 113 & 113 & 113 & 113 & 113 & 113 \\ \hline
-            KOR     &  113 & 113 & 113 & 112 & 112 & 113 & 112 & 112 \\ \hline
-            SPA    &  124 & 120 & 38  & 124 & 123 & 124 & 124 & 123 \\ \hline
-            TEL     &  139 & 139 & 139 & 41  & 139 & 26  & 139 & 138 \\ \hline
-            TUR    &  132 & 132 & 72  & 132 & 132 & 37  & 132 & 131 \\ \hline \hline
-            Total      &  1369 & 1299 & 1156 & 1210 & 1368 & 775 & 1369 & 1354 \\ \hline
-        \end{tabular}
-}
-~\\~\\
-\subfloat[Dev Set]{\label{tab:prompts-dev}
-        \begin{tabular}{lrrrrrrrr}
-            \hline
-            \textbf{Lang.} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{P8}\\ \hline
-            ARA     &   12 & 13 & 13 & 13 & 14 & 7  & 14 & 14  \\ \hline
-            CHI    &   14 & 14 & 0  & 15 & 15 & 14 & 13 & 15  \\ \hline
-            FRE     &   17 & 18 & 0  & 14 & 19 & 0  & 13 & 19  \\ \hline
-            GER     &   15 & 15 & 16 & 10 & 13 & 0  & 15 & 16  \\ \hline
-            HIN      &   16 & 17 & 17 & 0  & 17 & 0  & 16 & 17  \\ \hline
-            ITA    &   18 & 0  & 0  & 30 & 31 & 0  & 21 & 0   \\ \hline
-            JAP   &   0  & 14 & 15 & 14 & 15 & 14 & 14 & 14  \\ \hline
-            KOR     &   15 & 8  & 15 & 2  & 13 & 15 & 16 & 16  \\ \hline
-            SPA    &   7  & 0  & 0  & 21 & 7  & 21 & 21 & 23  \\ \hline
-            TEL     &   16 & 17 & 17 & 0  & 17 & 0  & 16 & 17  \\ \hline
-            TUR    &   22 & 4  & 0  & 22 & 7  & 0  & 22 & 23  \\ \hline \hline
-            Total      &   152& 120& 93 & 141& 168& 71 & 181& 174 \\ \hline
-        \end{tabular}
-}
-~\\~\\
-\subfloat[Test Set]{\label{tab:prompts-test}
-        \begin{tabular}{lrrrrrrrr}
-            \hline
-            \textbf{Lang.} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{P8}\\ \hline
-            ARA     &   13 & 11 & 12 & 14 & 10 & 13 & 12 & 15 \\ \hline
-            CHI    &   13 & 14 & 13 & 13 & 7  & 14 & 14 & 12 \\ \hline
-            FRE     &   13 & 14 & 11 & 15 & 14 & 8  & 11 & 14 \\ \hline
-            GER     &   15 & 14 & 16 & 16 & 12 & 2  & 12 & 13 \\ \hline
-            HIN      &   13 & 13 & 14 & 15 & 7  & 15 & 10 & 13 \\ \hline
-            ITA    &   13 & 19 & 16 & 16 & 15 & 0  & 11 & 10 \\ \hline
-            JAP   &   8  & 14 & 12 & 11 & 10 & 15 & 14 & 16 \\ \hline
-            KOR     &   12 & 12 & 8  & 14 & 12 & 14 & 13 & 15 \\ \hline
-            SPA    &   10 & 13 & 16 & 14 & 4  & 12 & 15 & 16 \\ \hline
-            TEL     &   10 & 10 & 11 & 14 & 13 & 15 & 11 & 16 \\ \hline
-            TUR    &   15 & 9  & 18 & 16 & 8  & 6  & 13 & 15 \\ \hline \hline
-            Total      &   135&143 & 147& 158& 112& 114& 136& 155 \\ \hline
-        \end{tabular}
-}
-\end{center}
-\end{small}
-\caption{Number of essays per language per prompt in each data set}
-\end{table*}
 
 
 \section{NLI Shared Task Description}
@@ -298,10 +232,10 @@ essay in those sets.  The previously unseen and unlabeled test data was
 released on March 11 and teams had 8 days to submit their system predictions.
 The predictions for each system
 were encoded in a CSV file, where each line contained the file ID of a
-file in TOEFL-TEST and the corresponding L1 prediction made by the
+file in \textsc{toefl11-test} and the corresponding L1 prediction made by the
 system.  Each CSV file was emailed to the NLI organizers and then
 evaluated against the gold standard.
-% Since this was a ``blind'' competition, the L1s for each of the essays in the test set were not released until after the submission deadline.
+% Since this was a ``blind'' competition, the L1s for each of the essays in the test set were not released until after the submission deadline.  
 
 
 \section{Teams}
@@ -312,7 +246,8 @@ of participating teams, along with their team abbreviations, can be
 found in Table~\ref{tab:teams}.
 
 
-\begin{table*}[!htbp]
+\begin{table}[!ht]
+\begin{small}
 \begin{center}
 \begin{tabular}{|l|l|}
 \hline
@@ -349,8 +284,10 @@ VTEX &  VTX \\ \hline
 
 \end{tabular}
 \end{center}
+\end{small}
 \caption{Participating Teams and Team Abbreviations\label{tab:teams}}
-\end{table*}
+
+\end{table}
 
 \section{Shared Task Results}
 \label{sec-results}
@@ -364,7 +301,25 @@ developed systems which were trained solely on \textsc{toefl11-train} and \texts
 was the most popular subtask with 29 teams competing with 116 submissions total
 for the subtask.  Most teams opted to submit 4 or 5 runs.
 
-\begin{table*}
+
+
+The Open subtasks had far fewer submissions.  Table \ref{tab:results:open1} shows
+results for the Open-1 sub-task where teams could train systems using any training
+data {\it except} for \textsc{toefl11-train} and \textsc{toefl11-dev}.  Three teams competed in this
+subtask for a total of 13 submissions.
+
+Table \ref{tab:results:open2} shows the results for the third subtask ``Open-2''.  Four
+teams competed in this task for a total of 15 submissions.  Interestingly for both
+of the Open subtasks, despite having access to different (and possibly more) data, the
+top system from the Closed sub-task was slightly higher than the top system from the
+Open-2 subtask (0.836 to 0.835).  One way of viewing this result is that it is
+preferable to keep the training data as close in composition to the test data, however,
+the ``close'' result might only be a function of how much public L1 data is available
+for this task.  For example, the TOR submission had to collect data from several different
+sources.
+
+
+\begin{table*}[!htbp]
 \begin{footnotesize}
 \rowcolors{2}{gray!25}{white}
 \begin{tabular}{|p{1cm}|c|p{1cm}|r|r|r|r|r|r|r|r|r|r|r|r|}
@@ -406,23 +361,6 @@ EUR   & 1  & 0.386 & 0.500 & 0.390 & 0.277 & 0.379 & 0.487 & 0.522 & 0.441 & 0.3
 \end{footnotesize}
 \end{table*}
 
-The Open subtasks had far fewer submissions.  Table \ref{tab:results:open1} shows
-results for the Open-1 sub-task where teams could train systems using any training
-data {\it except} for \textsc{toefl11-train} and \textsc{toefl11-dev}.  Three teams competed in this
-subtask for a total of 13 submissions.
-
-Table \ref{tab:results:open2} shows the results for the third subtask ``Open-2''.  Four
-teams competed in this task for a total of 15 submissions.  Interestingly for both
-of the Open subtasks, despite having access to different (and possibly more) data, the
-top system from the Closed sub-task was slightly higher than the top system from the
-Open-2 subtask (0.836 to 0.835).  One way of viewing this result is that it is
-preferable to keep the training data as close in composition to the test data, however,
-the ``close'' result might only be a function of how much public L1 data is available
-for this task.  For example, the TOR submission had to collect data from several different
-sources.
-
-
-
 \begin{table*}[!htbp]
 \begin{footnotesize}
 \rowcolors{2}{gray!25}{white}
@@ -463,6 +401,7 @@ NAI & 3  & 0.703 & 0.676 & 0.695 & 0.708 & 0.846 & 0.618 & 0.830 & 0.677 & 0.610
 
 
 
+
 \section{Cross Validation Results}
 \label{sec-cross-validation}
 Upon completion of the competition, we asked the participants to
@@ -486,7 +425,7 @@ significant digits.
 
 
 
-\begin{table*}[htbp]
+\begin{table}[h]
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Team Name} & \textbf{Accuracy}\\ \hline
@@ -507,7 +446,7 @@ MIC & 63 \\ \hline
 \end{tabular}
 \caption{Results for 10-fold cross-validation on \textsc{toefl11-train} $+$ \textsc{toefl11-dev}
 \label{tab:10fold}}
-\end{table*}
+\end{table}
 
 \section{Discussion of Approaches}
 \label{sec-commonalities}
@@ -532,9 +471,10 @@ distinct method employed was that of string kernels by the BUC team (who placed
 third in the closed competition).  This method only used character level features
 as well.  A summary of the machine learning methods is shown in Table~\ref{tab:common-machine-learning}.
 
-\begin{table*}[!t]
+
+\begin{table*}[!ht]
 \begin{small}
-\begin{tabular}{|l|p{9.5cm}|}
+\begin{tabular}{|l|p{10.5cm}|}
 \hline
 {\bf Machine Learning} & {\bf Teams} \\  \hline
 SVM                    & CN, UNT, MQ, JAR, TOR, ITA, CUN, TUE, COR, NRC, HAU, MIC, CAR  \\ \hline
@@ -548,6 +488,7 @@ k-NN                   & VTX \\ \hline
 \end{small}
 \caption{Machine Learning algorithms used in Shared Task\label{tab:common-machine-learning}}
 \end{table*}
+
 
 A summary of the common features used across teams is shown in Table~\ref{tab:common-features}.  It should be noted that the table does not detail the nuanced differences in
 how the features are realized.  For example, in the case of n-grams, some teams
@@ -581,7 +522,7 @@ text complexity measures.
 
 
 
-\begin{table*}[!t]
+\begin{table*}[!ht]
 \begin{small}
 \begin{tabular}{|l|l|p{9.5cm}|}
 \hline
@@ -676,6 +617,76 @@ shared task a great experience.
 
 \bibliographystyle{naaclhlt2013}
 \bibliography{nli-relatedwork}
+
+\appendix
+
+
+
+
+\begin{table*}[!ht]
+\begin{small}
+\begin{center}
+
+\subfloat[Training Set]{\label{tab:prompts-train}
+        \begin{tabular}{lrrrrrrrr}
+            \hline
+            \textbf{Lang.} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{P8}\\ \hline
+            ARA     &  113 & 113 & 113 & 112 & 112 & 113 & 112 & 112 \\ \hline
+            CHI    &  113 & 113 & 113 & 112 & 112 & 113 & 112 & 112 \\ \hline
+            FRE     &  128 & 128 & 76  & 127 & 127 & 60  & 127 & 127 \\ \hline
+            GER     &  125 & 125 & 125 & 125 & 125 & 26  & 125 & 124 \\ \hline
+            HIN      &  132 & 132 & 132 & 71  & 132 & 38  & 132 & 131 \\ \hline
+            ITA    &  142 & 70  & 122 & 141 & 141 & 12  & 141 & 131 \\ \hline
+            JAP   &  108 & 114 & 113 & 113 & 113 & 113 & 113 & 113 \\ \hline
+            KOR     &  113 & 113 & 113 & 112 & 112 & 113 & 112 & 112 \\ \hline
+            SPA    &  124 & 120 & 38  & 124 & 123 & 124 & 124 & 123 \\ \hline
+            TEL     &  139 & 139 & 139 & 41  & 139 & 26  & 139 & 138 \\ \hline
+            TUR    &  132 & 132 & 72  & 132 & 132 & 37  & 132 & 131 \\ \hline \hline
+            Total      &  1369 & 1299 & 1156 & 1210 & 1368 & 775 & 1369 & 1354 \\ \hline
+        \end{tabular}
+}
+~\\~\\
+\subfloat[Dev Set]{\label{tab:prompts-dev}
+        \begin{tabular}{lrrrrrrrr}
+            \hline
+            \textbf{Lang.} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{P8}\\ \hline
+            ARA     &   12 & 13 & 13 & 13 & 14 & 7  & 14 & 14  \\ \hline
+            CHI    &   14 & 14 & 0  & 15 & 15 & 14 & 13 & 15  \\ \hline
+            FRE     &   17 & 18 & 0  & 14 & 19 & 0  & 13 & 19  \\ \hline
+            GER     &   15 & 15 & 16 & 10 & 13 & 0  & 15 & 16  \\ \hline
+            HIN      &   16 & 17 & 17 & 0  & 17 & 0  & 16 & 17  \\ \hline
+            ITA    &   18 & 0  & 0  & 30 & 31 & 0  & 21 & 0   \\ \hline
+            JAP   &   0  & 14 & 15 & 14 & 15 & 14 & 14 & 14  \\ \hline
+            KOR     &   15 & 8  & 15 & 2  & 13 & 15 & 16 & 16  \\ \hline
+            SPA    &   7  & 0  & 0  & 21 & 7  & 21 & 21 & 23  \\ \hline
+            TEL     &   16 & 17 & 17 & 0  & 17 & 0  & 16 & 17  \\ \hline
+            TUR    &   22 & 4  & 0  & 22 & 7  & 0  & 22 & 23  \\ \hline \hline
+            Total      &   152& 120& 93 & 141& 168& 71 & 181& 174 \\ \hline
+        \end{tabular}
+}
+~\\~\\
+\subfloat[Test Set]{\label{tab:prompts-test}
+        \begin{tabular}{lrrrrrrrr}
+            \hline
+            \textbf{Lang.} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{P8}\\ \hline
+            ARA     &   13 & 11 & 12 & 14 & 10 & 13 & 12 & 15 \\ \hline
+            CHI    &   13 & 14 & 13 & 13 & 7  & 14 & 14 & 12 \\ \hline
+            FRE     &   13 & 14 & 11 & 15 & 14 & 8  & 11 & 14 \\ \hline
+            GER     &   15 & 14 & 16 & 16 & 12 & 2  & 12 & 13 \\ \hline
+            HIN      &   13 & 13 & 14 & 15 & 7  & 15 & 10 & 13 \\ \hline
+            ITA    &   13 & 19 & 16 & 16 & 15 & 0  & 11 & 10 \\ \hline
+            JAP   &   8  & 14 & 12 & 11 & 10 & 15 & 14 & 16 \\ \hline
+            KOR     &   12 & 12 & 8  & 14 & 12 & 14 & 13 & 15 \\ \hline
+            SPA    &   10 & 13 & 16 & 14 & 4  & 12 & 15 & 16 \\ \hline
+            TEL     &   10 & 10 & 11 & 14 & 13 & 15 & 11 & 16 \\ \hline
+            TUR    &   15 & 9  & 18 & 16 & 8  & 6  & 13 & 15 \\ \hline \hline
+            Total      &   135&143 & 147& 158& 112& 114& 136& 155 \\ \hline
+        \end{tabular}
+}
+\end{center}
+\end{small}
+\caption{Number of essays per language per prompt in each data set}
+\end{table*}
 
 
 \end{document}
