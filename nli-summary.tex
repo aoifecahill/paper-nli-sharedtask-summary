@@ -308,7 +308,7 @@ evaluated against the gold standard.
 \label{sec-teams}
 In total, 29 teams competed in the shared task competition, with 24 teams
 electing to write papers describing their system(s).  The list
-of participating times, along with their team abbreviations, can be
+of participating teams, along with their team abbreviations, can be
 found in Table~\ref{tab:teams}.
 
 
@@ -423,7 +423,7 @@ sources.
 
 
 
-\begin{table*}[htbp]
+\begin{table*}[!htbp]
 \begin{footnotesize}
 \rowcolors{2}{gray!25}{white}
 \begin{tabular}{|p{1cm}|c|p{1cm}|r|r|r|r|r|r|r|r|r|r|r|r|}
@@ -440,7 +440,7 @@ NAI & 2  & 0.356 & 0.329 & 0.450 & 0.331 & 0.423 & 0.066 & 0.511 & 0.426 & 0.481
 \end{table*}
 
 
-\begin{table*}[htbp]
+\begin{table*}[!htbp]
 \begin{footnotesize}
 \rowcolors{2}{gray!25}{white}
 \begin{tabular}{|p{1cm}|c|p{1cm}|r|r|r|r|r|r|r|r|r|r|r|r|}
@@ -505,7 +505,7 @@ CUN & 74.2\\ \hline
 UNT  & 63.77 \\ \hline
 MIC & 63 \\ \hline
 \end{tabular}
-\caption{Results for 10-fold cross-validation on TOEFL-Train $+$ TOEFL-Dev
+\caption{Results for 10-fold cross-validation on \textsc{toefl11-train} $+$ \textsc{toefl11-dev}
 \label{tab:10fold}}
 \end{table*}
 
@@ -519,7 +519,20 @@ the common features.  Our summary is based on the information provided
 in the 24 team reports.
 %%\footnote{29 teams competed but 24 teams submitted reports}.  
 
-\begin{table*}[htbp]
+While there are many machine learning algorithms to choose from, the overwhelming 
+majority of teams used Support Vector Machines.  This may not be surprising
+given that most prior work has also used SVMs.  Tetreault et al. 
+\shortcite{tetreault-EtAl:2012:PAPERS} showed that one could achieve even higher 
+performance on the NLI task using ensemble methods for combining classifiers.  
+Four teams also experimented with different ways of using ensemble methods.
+Three teams used Maximum Entropy methods for their modeling.  
+Finally, there were a few other teams that tried different methods such as 
+Discriminat Functional Analysis and K- Nearest Neighbors.  Possibly the most
+distinct method employed was that of string kernels by the BUC team (who placed
+third in the closed competition).  This method only used character level features
+as well.  A summary of the machine learning methods is shown in Table~\ref{tab:common-machine-learning}.
+
+\begin{table*}[!t]
 \begin{small}
 \begin{tabular}{|l|p{9.5cm}|}
 \hline
@@ -536,8 +549,39 @@ k-NN                   & VTX \\ \hline
 \caption{Machine Learning algorithms used in Shared Task\label{tab:common-machine-learning}}
 \end{table*}
 
+A summary of the common features used across teams is shown in Table~\ref{tab:common-features}.  It should be noted that the table does not detail the nuanced differences in
+how the features are realized.  For example, in the case of n-grams, some teams
+used only the top $k$ most frequently n-grams while others used all of the n-grams
+available.  If interested in more information about how the particulars of a system
+and its feature, we recommend reading the team's summary report.
 
-\begin{table*}[htbp]
+The most common features were word, character and POS n-gram
+features.  Most teams used n-grams ranging from unigrams to trigrams, in line with
+prior literature.  However several teams used higher-order n-grams.  In fact, four
+of the top five teams (JAR, OSL, CAR, TUE) generally used at least 4-grams, and some,
+such as OSL and JAR, went as high 7 and 9 respectively in terms of character n-grams.  
+
+Syntactic features, which were first evaluated in Wong and Dras \shortcite{wong-dras:2011:EMNLP} and Swanson and Charniak \shortcite{swanson-charniak:2012:ACL2012short} were used
+by six teams in the competition, with most using dependency parses in different ways.  
+Interestingly, while Wong and Dras \shortcite{wong-dras:2011:EMNLP} showed some of the
+highest performance scores on the ICLE corpus using parse features, only two of the six
+teams which used them placed in the top ten in the Closed sub-task.
+
+Spelling features were championed in the Koppel et al. \shortcite{koppel2005determining}
+and in subsequent NLI work, however only three teams in the competition used them.
+
+There were several novel features that teams tried.  For example, 
+several teams tried skip n-grams, as well as length of words, sentences
+and documents; LIM
+experimented with machine translation; CUN had different features
+based on the relative frequencies of the POS and lemma of a word; 
+HAI tried several new features based on passives and context function;
+and the TUE team tried a battery of syntactic features as well as 
+text complexity measures.  
+
+
+
+\begin{table*}[!t]
 \begin{small}
 \begin{tabular}{|l|l|p{9.5cm}|}
 \hline
@@ -565,7 +609,7 @@ Syntactic Features & Dependencies        & MQ, TOR, ITA, TUE, NAI, NRC \\ \hline
                    & TSG                 & MQ, TOR, NAI,  \\ \hline
                    & CF Productions      & TOR, \\ \hline
 		   & Adaptor Grammars  & MQ  \\ \hline
-Spelling Features  &        &   LIM,CN  \\ \hline
+Spelling Features  &        &   LIM,CN, HAI \\ \hline
 \end{tabular}
 \end{small}
 \caption{Common Features used in Shared Task\label{tab:common-features}}
@@ -623,7 +667,7 @@ In addition, thanks goes to the BEA8 Organizers (Joel Tetreault,
 Jill Burstein and Claudia Leacock) for hosting the shared
 task with their workshop.  Finally, we would like to thank all the teams for 
 participating in this first shared task and making it a success.
-Their feedback, patience and excitement levels made organizing this
+Their feedback, patience and enthusiasm made organizing this
 shared task a great experience.
 
 
