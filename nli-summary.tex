@@ -123,9 +123,25 @@ features included character and POS n-grams, content and function words,
 as well as spelling and grammatical errors (since language learners have
 tendencies to make certain errors based on their L1 \cite{SwanSmith01}).
 An SVM model was trained on these features extracted from a subsection of 
-ICLE corpus consisting of 5 L1s.  These features would figure prominently
-in later work such as \cite{wong-dras:2011:EMNLP} and \cite{tetreault-EtAl:2012:PAPERS}.
+ICLE corpus consisting of 5 L1s.   These features would figure prominently
+in later work such as \cite{wong-dras:2011:EMNLP} and \cite{tetreault-EtAl:2012:PAPERS}.  
 
+N-gram features (word, character and POS)  have figured 
+prominently prior work.  Not only are they
+easy to compute, but they can be quite predictive.  However, there are
+many variations on the features.  Past reseach efforts have explored
+different n-gram windows (though most tend to focus on uni-grams and bi-grams),different thresholds for how many n-grams
+to include as well as whether to encode the feature as binary (presence
+or absence of the particular n-gram) or as a normalized count.  
+
+The inclusion of syntactic features have been a focus in recent work.
+\shortcite{wong-dras:2011:EMNLP} explored the use of production rules
+from two parsers and \shortcite{swanson-charniak:2012:ACL2012short} explored
+the use of Tree Substitution Grammars (TSGs).  \shortcite{tetreault-EtAl:2012:PAPERS} also investigated the use of TSGs as well as dependency
+features extracted from the Stanford parser.  
+
+Other approaches to NLI have included the use of Latent Dirichlet Analysis
+to cluster features \cite{}
 
 
 \section{Data}
