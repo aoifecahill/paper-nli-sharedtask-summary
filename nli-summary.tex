@@ -108,7 +108,23 @@ this shared task. In Sections~\ref{sec-teams}....
 
 \section{Related Work}
 \label{sec-relatedwork}
+In this section, we provide an overview of some of the common
+approaches used for NLI prior to this shared task.  While a
+comprehensive review is outside the scope of this paper, we have compiled a 
+bibliography of related work in the field. It can be downloaded 
+from the NLI Shared Task website.\footnote{http://nlisharedtask2013.org/bibliography-of-related-work-in-nli}.
 
+To date, nearly all approaches have treated the task of NLI as a 
+supervised classification problem where statistical models are trained on 
+data from the different L1s.  The work of \shortcite{koppel2005determining}
+was the first in the field and they explored a multitude of features, many
+of which are employed in several of the systems in the shared tasks.  These
+features included character and POS n-grams, content and function words,
+as well as spelling and grammatical errors (since language learners have
+tendencies to make certain errors based on their L1 \cite{SwanSmith01}).
+An SVM model was trained on these features extracted from a subsection of 
+ICLE corpus consisting of 5 L1s.  These features would figure prominently
+in later work such as \cite{wong-dras:2011:EMNLP} and \cite{tetreault-EtAl:2012:PAPERS}.
 
 
 
@@ -458,9 +474,14 @@ MIC & 63 \\ \hline
 \label{tab:10fold}}
 \end{table}
 
-\subsection{Commonalities}
-\label{subsec-commonalities}
-In order to
+\section{Discussion of Approaches}
+\label{sec-commonalities}
+With so many teams competing in the shared task competition, we investigated
+whether there were any commonalities in learning methods or features 
+between the teams.  In this section, we provide a coarse grained summary
+of the common machine learning methods teams employed as well as some of 
+the common features.  Our summary is based on the information provided
+in the 24 team reports.\footnote{29 teams competed but 24 teams submitted reports}.  
 
 \begin{table*}[htbp]
 \begin{small}
@@ -542,6 +563,8 @@ proficiency level
 as language learners make different types of errors
 and may even have stylistic differences in their writing as their
 proficiency progresses.  
+
+Another related work - how well do human raters do?
 
 
 \section*{Acknowledgments}
