@@ -82,7 +82,7 @@
 @InBook{Ishikawa:2011,
   author = 	 {Shin'ichiro Ishikawa},
   editor =       {G. Weir, S. Ishikawa, and K. Poonpon},
-  chapter = 	 {{A New Horizon in Learner Corpus Studies: The Aim of the ICNALE Projects}},
+  chapter = 	 {{A New Horizon in Learner Corpus Studies: The Aim of the ICNALE Projects},
   title = 	 {Corpora and Language Technologies in Teaching, Learning and Research},
   year = 	 {2011},
   OPTkey = 	 {},
@@ -455,7 +455,7 @@ url = {http://www.aclweb.org/anthology/U/U11/U11-1015}
 
 @InProceedings{yannakoudakis-briscoe-medlock:2011:ACL-HLT2011,
   author    = {Yannakoudakis, Helen  and  Briscoe, Ted  and  Medlock, Ben},
-  title     = {{A New Dataset and Method for Automatically Grading ESOL Texts}},
+  title     = {A New Dataset and Method for Automatically Grading ESOL Texts},
   booktitle = {Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies},
   month     = {June},
   year      = {2011},
